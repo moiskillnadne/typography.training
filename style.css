@@ -1,0 +1,280 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #000000;
+    color: #FFFFFF
+}
+
+.root {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 35px;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.header_navigation {
+    display: grid;
+    justify-items: flex-start;
+    align-items: center;
+}
+
+.header_navigation > div{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+.menu_title {
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    cursor: default;
+}
+
+.menu_button {
+    font-family: "FuturaNowText-Rg";
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.header_auth {
+    display: grid;
+}
+
+.header_auth > div {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth_button > button {
+    padding: 7px 15px 10px 15px;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+}
+
+.try_button > button {
+    padding: 7px 15px 10px 15px;
+    border: 1px solid #E20016;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background-color: #E20016;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+}
+
+.main_title_wrapper {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
+
+.main_title_wrapper::after {
+    content: '';
+    width: 100%;
+    display: block;
+    height: 1px;
+    background-color: #FFFFFF;
+}
+
+.main_title {
+    width: 100%;
+}
+
+.main_title > h1 {
+    color:#FFFFFF;
+    font-size: 118px;
+    font-family: "FuturaNowText-Blk";
+    font-weight: 900;
+    line-height: 107px;
+}
+
+.main_flow {
+    padding-top: 50px;
+}
+
+.first_step {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 1fr;
+}
+
+.first_step_star {
+    position: relative;
+}
+
+.promote_layer_star {
+    position: absolute;
+    top: 84px;
+    left: 102px;
+    width: 50%;
+    color:#E20016;
+    transform: rotate(-6deg);
+    line-height: 28px;
+}
+
+.first_step_star > div {
+    font-size: 24px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+}
+
+.second_step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.second_step_left_column {}
+
+.second_step_all_themes {}
+
+.second_step_all_themes_description > h3 {
+    font-size: 40px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 8.5px;
+}
+
+.second_step_all_themes_description > p {
+    font-size: 24px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 400;
+    margin: 0;
+    line-height: 28.8px;
+}
+
+
+.second_step_all_themes_price {
+}
+
+.old_price > p {
+    font-size: 30px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    text-decoration: line-through;
+    color: #5B5B5B;
+}
+
+.current_price {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.lesson_description {
+    padding-left: 10px;
+}
+
+.lesson_description > div {
+    font-size: 24px;
+    font-family: "FuturaNowText-Rg";
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.lesson_description:first-child {
+    margin-bottom: 5px;
+}
+
+.pay_button {
+    font-size: 42px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #E20016;
+    border: 1px solid #E20016;
+    padding: 0px 25px 6px 25px;
+    border-radius: 6px;
+}
+
+.pipe_block {
+    padding-top: 50px;
+}
+
+.pipe_block object {
+    width: 375px;
+}
+
+.pipe_block p {
+    font-size: 24px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    line-height: 28.8px;
+    font-style: normal;
+}
+
+.rule_inside_and_outside > h3 {
+    font-size: 40px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    letter-spacing: 8.5px;
+    line-height: 10px;
+    line-height: 50px;
+}
+
+.thrid_step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.lightning_block_description > p {
+    font-size: 24px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    line-height: 28.8px;
+}
+
+.fourth_step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.text_layout_description {
+    padding-bottom: 20px;
+}
+
+.text_layout h3 {
+    font-size: 40px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 8.5px;
+    line-height: 50px;
+}
+
+.four_circles_block {
+    padding-top: 65px;
+}
+
+.modular {
+    font-size: 40px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 8.5px;
+    line-height: 50px;
+}
+
+.rule_object > h3{
+    font-size: 40px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 8.5px;
+    line-height: 50px;
+    margin: 10px 0px 25px 0px;
+}
