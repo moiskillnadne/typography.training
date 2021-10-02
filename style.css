@@ -1,4 +1,6 @@
 body {
+    position: relative;
+
     width: 100%;
     min-height: 100vh;
 
@@ -42,6 +44,21 @@ header {
     font-family: "FuturaNowText-Rg";
     font-weight: 400;
     cursor: pointer;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.active_menu_button::after {
+    content: '';
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    height: 2px;
+    background-color: #E20016;
+}
+
+.menu_button:hover {
+    color: #E20016;
 }
 
 .header_auth {
@@ -280,6 +297,7 @@ header {
 }
 
 footer {
+    padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -307,4 +325,14 @@ footer a {
 
 .mail {
     justify-items: flex-end;
+}
+
+
+#login_popup {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 360px;
+    height: 283px;
+    background-color: #FFFFFF;
 }
