@@ -296,7 +296,7 @@ header {
     margin: 10px 0px 25px 0px;
 }
 
-footer {
+.footer {
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -308,7 +308,7 @@ footer {
     font-weight: 400;
 }
 
-footer a {
+.footer a {
     color:#E20016;
     text-decoration: none;
 }
@@ -329,10 +329,282 @@ footer a {
 
 
 #login_popup {
+    display: none;
+
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 80px;
+    right: 260px;
     width: 360px;
-    height: 283px;
     background-color: #FFFFFF;
+
+    padding: 22px;
+}
+
+.square_arrow { 
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    top: -10px;
+    left: 195px;
+    transform: rotate(45deg);
+}
+
+.enter_labels {
+    color: #000000;
+}
+
+.enter_labels > h5 {
+    margin: 0;
+
+    font-size: 20px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+}
+.enter_labels > p {
+    margin: 0;
+
+    font-size: 16px;
+    font-family: "FuturaNowText-Rg";
+    font-weight: 400;
+}
+
+.enter_email_option {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+    margin-top: 16px;
+
+    width: 100%;
+    height: 45px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+}
+
+.enter_email_option > input{
+    border: none;
+    font-size: 16px;
+    font-family: "FuturaNowText-Rg";
+    font-weight: 400;
+    text-indent: 13px;
+    padding-bottom: 5px;
+
+}
+
+.enter_email_option > input::placeholder {
+    color: #C6C6C6;
+}
+
+.enter_email_option > button{
+    border: none;
+    background-color: #CCCCCC;
+}
+
+.enter_buro_option {}
+
+.label_or {
+    color: #000000;
+    font-size: 16px;
+    font-family: "FuturaNowText-Rg";
+    font-weight: 400;
+    text-align: center;
+}
+
+.enter_with_buro_button > button {
+    width: 100%;
+    height: 43px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    color: #FFFFFF;
+
+    font-size: 20px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+
+    padding-bottom: 7px;
+}
+
+.enter_with_buro_description > p {
+    color: #000000;
+    font-size: 13px;
+    font-family: "FuturaNowText-Rg";
+    font-weight: 400;
+}
+
+.second_step_all_themes_mobile_mode {
+    display: none;
+}
+
+.second_step_right_column_mobile_mode {
+    display: none;
+}
+
+.text_layout_mobile_mode {
+    display: none;
+}
+
+.right_column_mobile_mode {
+    display: none;
+}
+
+.footer_mobile_mode {
+    display: none;
+}
+
+
+@media screen and (max-width: 576px) {
+    .root {
+        padding: 0px;
+    }
+
+    .header_navigation {
+        display: none;
+    }
+
+    .menu_burger {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu_burger_mid_line {
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: #FFFFFF;
+    }
+
+    .main_title > h1 {
+        font-size: 58px;
+        line-height: 51px;
+    }
+
+    .main_flow {
+        padding: 10px;
+    }
+
+    .first_step {
+        grid-auto-flow: row;
+        gap: 40px;
+    }
+
+    .second_step,
+    .thrid_step,
+    .fourth_step {
+        grid-template-columns: 1fr;
+    }
+
+    .first_step_circles > object,
+    .first_step_star > object,
+    .pipe_block object,
+    .second_step_double_circles_object > object,
+    .question_block > object,
+    .lightning_block_object > object,
+    .four_circles_object > object, 
+    .triangle_object > object {
+        width: 350px;
+    }
+
+    .rule_inside_and_outside > h3,
+    .modular > h3 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .modular > h3 {
+        letter-spacing: 4.5px;
+    }
+
+    .pay_button {
+        font-size: 36px;
+    }
+
+    .second_step_all_themes {
+        display: none;
+    }
+
+    .second_step_all_themes_mobile_mode {
+        display: block;
+    }
+
+    .second_step_right_column {
+        display: none;
+    }
+
+    .second_step_right_column_mobile_mode {
+        display: block;
+    }
+
+    .text_layout {
+        display: none;
+    }
+
+    .text_layout_mobile_mode {
+        display: block;
+    }
+
+    .right_column {
+        display: none;
+    }
+
+    .right_column_mobile_mode {
+        display: block;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .footer_mobile_mode {
+        display: block;
+    }
+
+    .footer_mobile_mode a {
+        color: #E20016;
+        font-size: 16px;
+        font-family: "FuturaNowText-Rg";
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .power_by {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    body {
+        width: auto;
+    }
+
+    .main_title_wrapper {
+        margin-bottom: 20px;
+    }
+
+    .old_price {
+        display: none;
+    }
+
+    .second_step_all_themes_description {
+        padding: 15px 0px 20px 0px;
+    }
+
+    .text_layout_description {
+        font-size: 36px;
+        font-family: "FuturaNowText-Md";
+        font-weight: 500;
+
+        line-height: 44px;
+        letter-spacing: 4px;
+    }
+
+    .text_layout_description > h3 {
+        margin: 0px;
+        padding: 10px 0px 10px 0px;
+    }
+
+    .current_price {
+        padding-bottom: 50px;
+    }
 }
