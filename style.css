@@ -42,7 +42,6 @@ header {
 .header_navigation > div{
     display: grid;
     grid-auto-flow: column;
-    gap: 10px;
 }
 
 .menu_title {
@@ -50,6 +49,7 @@ header {
     font-weight: 500;
     cursor: default;
     font-size: 20px;
+    margin-right: 3px;
 }
 
 .menu_button {
@@ -59,6 +59,7 @@ header {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 20px;
+    margin-right: 16px;
 
 }
 
@@ -97,6 +98,7 @@ header {
     font-weight: 500;
 
     font-size: 20px;
+    cursor: pointer;
 }
 
 .try_button > button {
@@ -110,6 +112,7 @@ header {
     font-weight: 500;
 
     font-size: 20px;
+    cursor: pointer;
 
 }
 
@@ -158,12 +161,13 @@ header {
 
 .promote_layer_star {
     position: absolute;
-    top: 84px;
-    left: 107px;
+    top: 87px;
+    left: 59px;
     width: 50%;
     color:#E20016;
     transform: rotate(-6deg);
     line-height: 28px;
+    text-align: center;
 }
 
 .first_step_star > div {
@@ -172,6 +176,7 @@ header {
     font-weight: 500;
     letter-spacing: -2px;
     margin: 0px;
+    line-height: 28.8px;
 }
 
 .first_step_star_description {
@@ -187,10 +192,20 @@ header {
 
 .second_step_all_themes {}
 
+.second_step_double_circles_object {
+    padding-top: 62px;
+}
+
+.question_block  {
+    padding-top: 38px;
+}
+
 .second_step_all_themes_description > h3 {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
+    margin: 24px 0px 0px 0px;
+
 }
 
 .titles_default {
@@ -208,6 +223,10 @@ header {
 
 
 .second_step_all_themes_price {
+}
+
+.lightning_block_object {
+    padding-bottom: 14px;
 }
 
 .old_price > p {
@@ -250,10 +269,11 @@ header {
     border: 1px solid #E20016;
     padding: 0px 25px 4px 25px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .pipe_block {
-    padding-top: 50px;
+    padding-top: 62px;
 }
 
 .pipe_block object {
@@ -274,6 +294,10 @@ header {
     font-weight: 500;
     line-height: 10px;
     line-height: 50px;
+}
+
+.rule_inside_and_outside span {
+    letter-spacing: normal;
 }
 
 .thrid_step {
@@ -305,15 +329,14 @@ header {
 }
 
 .four_circles_block {
-    padding-top: 65px;
+    padding-top: 62px;
 }
 
-.modular {
+.modular > h3{
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    margin: 0;
-    letter-spacing: 8.5px;
+    letter-spacing: 7.5px;
     line-height: 50px;
 }
 
