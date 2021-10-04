@@ -5,13 +5,15 @@ body {
     min-height: 100vh;
 
     background-color: #000000;
-    color: #FFFFFF
+    color: #FFFFFF;
+
+    margin: 0px;
 }
 
 .root {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 5px 35px;
+    padding: 0px 35px 0px 35px;
 }
 
 header {
@@ -20,6 +22,15 @@ header {
 
     display: grid;
     grid-template-columns: 3fr 2fr;
+}
+
+.margin_bottom {
+    margin-bottom: 62px;
+}
+
+.grid_center {
+    display: grid;
+    justify-content: center;
 }
 
 .header_navigation {
@@ -38,6 +49,7 @@ header {
     font-family: "FuturaNowText-Md";
     font-weight: 500;
     cursor: default;
+    font-size: 20px;
 }
 
 .menu_button {
@@ -46,6 +58,8 @@ header {
     cursor: pointer;
     color: #FFFFFF;
     text-decoration: none;
+    font-size: 20px;
+
 }
 
 .active_menu_button::after {
@@ -74,23 +88,29 @@ header {
 }
 
 .auth_button > button {
-    padding: 7px 15px 10px 15px;
+    padding: 10px 20px 11px 20px;
     border: 1px solid #FFFFFF;
     border-radius: 6px;
     color: #FFFFFF;
     background-color: rgba(0, 0, 0, 0);
     font-family: "FuturaNowText-Md";
     font-weight: 500;
+
+    font-size: 20px;
 }
 
 .try_button > button {
-    padding: 7px 15px 10px 15px;
+    padding: 10px 20px 11px 20px;
+
     border: 1px solid #E20016;
     border-radius: 6px;
     color: #FFFFFF;
     background-color: #E20016;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
+
+    font-size: 20px;
+
 }
 
 .main_title_wrapper {
@@ -117,6 +137,8 @@ header {
     font-family: "FuturaNowText-Blk";
     font-weight: 900;
     line-height: 107px;
+
+    margin: 44px 0px 50px 0px;
 }
 
 .main_flow {
@@ -127,6 +149,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr 1fr;
+    align-items: flex-end;
 }
 
 .first_step_star {
@@ -136,7 +159,7 @@ header {
 .promote_layer_star {
     position: absolute;
     top: 84px;
-    left: 102px;
+    left: 107px;
     width: 50%;
     color:#E20016;
     transform: rotate(-6deg);
@@ -147,6 +170,12 @@ header {
     font-size: 24px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
+    letter-spacing: -2px;
+    margin: 0px;
+}
+
+.first_step_star_description {
+    width: 62%;
 }
 
 .second_step {
@@ -162,8 +191,11 @@ header {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    margin: 0;
-    letter-spacing: 8.5px;
+}
+
+.titles_default {
+    letter-spacing: 7.5px;
+    margin: 24px 0px 14px 0px;
 }
 
 .second_step_all_themes_description > p {
@@ -184,6 +216,7 @@ header {
     font-weight: 500;
     text-decoration: line-through;
     color: #5B5B5B;
+    margin: 18px 0px 0px 0px
 }
 
 .current_price {
@@ -201,6 +234,7 @@ header {
     font-family: "FuturaNowText-Rg";
     font-weight: 500;
     line-height: 28px;
+    padding-bottom: 3px;
 }
 
 .lesson_description:first-child {
@@ -214,7 +248,7 @@ header {
     color: #FFFFFF;
     background-color: #E20016;
     border: 1px solid #E20016;
-    padding: 0px 25px 6px 25px;
+    padding: 0px 25px 4px 25px;
     border-radius: 6px;
 }
 
@@ -238,7 +272,6 @@ header {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    letter-spacing: 8.5px;
     line-height: 10px;
     line-height: 50px;
 }
@@ -253,6 +286,7 @@ header {
     font-family: "FuturaNowText-Md";
     font-weight: 500;
     line-height: 28.8px;
+    margin-top: 0px;
 }
 
 .fourth_step {
@@ -261,15 +295,12 @@ header {
 }
 
 .text_layout_description {
-    padding-bottom: 20px;
 }
 
 .text_layout h3 {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    margin: 0;
-    letter-spacing: 8.5px;
     line-height: 50px;
 }
 
@@ -290,10 +321,7 @@ header {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    margin: 0;
-    letter-spacing: 8.5px;
     line-height: 50px;
-    margin: 10px 0px 25px 0px;
 }
 
 .footer {
@@ -453,10 +481,27 @@ header {
     display: none;
 }
 
+.menu_burger {
+    display: none;
+}
+
+#menu_layer_mobile {
+    display: none;
+    width: 0px;
+    height: 0px;
+    transition: all 0.2s;
+}
+
 
 @media screen and (max-width: 576px) {
     .root {
         padding: 0px;
+    }
+
+    header {
+        direction: rtl;
+        align-items: center;
+        justify-items: center;
     }
 
     .header_navigation {
@@ -464,16 +509,68 @@ header {
     }
 
     .menu_burger {
-        position: fixed;
-        top: 20px;
-        right: 20px;
+        display: block;
+        padding-left: 10px;  
+        z-index: 4;      
     }
 
     .menu_burger_mid_line {
         display: block;
-        width: 50px;
-        height: 2px;
+        width: 30px;
+        height: 3px;
         background-color: #FFFFFF;
+        transition: all 0.2s;
+    }
+
+
+    .menu_burger_mid_line::after {
+        display: block;
+        background-color: #FFFFFF;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(-12px);
+        transition: all 0.2s;
+    }
+
+    .menu_burger_mid_line::before {
+        display: block;
+        background-color: #FFFFFF;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(10px);
+        transition: all 0.2s;
+    }
+
+    .menu_burger_mid_line_active {
+        display: block;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all 0.2s;
+    }
+
+    .menu_burger_mid_line_active::after {
+        display: block;
+        background-color: #000000;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(0px) rotate(45deg);
+        transition: all 0.2s;
+    }
+
+    .menu_burger_mid_line_active::before {
+        display: block;
+        background-color: #000000;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(3px) rotate(-45deg);
+        transition: all 0.2s;
     }
 
     .main_title > h1 {
@@ -591,10 +688,6 @@ header {
     }
 
     .text_layout_description {
-        font-size: 36px;
-        font-family: "FuturaNowText-Md";
-        font-weight: 500;
-
         line-height: 44px;
         letter-spacing: 4px;
     }
@@ -606,5 +699,61 @@ header {
 
     .current_price {
         padding-bottom: 50px;
+    }
+
+    #menu_layer_mobile {
+        display: block;
+        width: 0%;
+        height: 0vh;
+        visibility: hidden;
+        background-color: #FFFFFF;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transition: all 0.5s;
+    }
+
+    #menu_layer_mobile > .nav {
+        display: none;
+    }
+
+
+    .menu_layer_mobile_active {
+        display: block !important;
+        width: 100% !important;
+        height: 100vh !important;
+        visibility: visible !important;
+        transition: all 0.2s;
+    }
+
+    .menu_layer_mobile_active > .nav {
+        display: flex !important;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin: 65px 0px 0px 0px;
+    }
+
+    .nav > div,
+    .nav > a {
+        color: #000000;
+    }
+
+    .menu_title {
+        font-size: 28px;
+        font-family: "FuturaNowText-Md";
+        font-weight: 500;
+        line-height: 27.5px;
+    }
+
+    .nav > a,
+    .menu_button {
+        font-size: 28px;
+        font-family: "FuturaNowText-Rg";
+        font-weight: 400;
+        line-height: 40px;
     }
 }
