@@ -492,6 +492,13 @@ header {
     transition: all 0.2s;
 }
 
+#login_layer_mobile {
+    display: none;
+    width: 0px;
+    height: 0px;
+    transition: all 0.2s;
+}
+
 
 @media screen and (max-width: 576px) {
     .root {
@@ -640,6 +647,11 @@ header {
 
     .text_layout_mobile_mode {
         display: block;
+        font-size: 36px;
+        font-family: "FuturaNowText-Md";
+        font-weight: 500;
+        line-height: 50px;
+        line-height: 44px;
     }
 
     .right_column {
@@ -699,6 +711,7 @@ header {
 
     .current_price {
         padding-bottom: 50px;
+        grid-template-columns: 1fr 1fr;
     }
 
     #menu_layer_mobile {
@@ -713,10 +726,40 @@ header {
         transition: all 0.5s;
     }
 
+    #login_layer_mobile {
+        display: block;
+        width: 0%;
+        height: 0vh;
+        visibility: hidden;
+        background-color: #FFFFFF;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: all 0.5s;
+        z-index: 10;
+    }
+
+    #login_layer_mobile > .login_layer_mobile_content {
+        display: none;
+    }
+
     #menu_layer_mobile > .nav {
         display: none;
     }
 
+    .login_layer_mobile_active {
+        display: block !important;
+        width: 100% !important;
+        height: 100vh !important;
+        visibility: visible !important;
+        transition: all 0.2s;
+    }
+
+    .login_layer_mobile_active > .login_layer_mobile_content {
+        display: grid !important;
+        margin-top: 60px;
+        padding: 10px;
+    }
 
     .menu_layer_mobile_active {
         display: block !important;
@@ -755,5 +798,39 @@ header {
         font-family: "FuturaNowText-Rg";
         font-weight: 400;
         line-height: 40px;
+    }
+
+    .login_layer_close_button {
+        position: absolute;
+        top: 33px;
+        right: 27px;
+    }
+
+    .login_layer_close_button_mid_line {
+        display: block;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all 0.2s;
+    }
+
+    .login_layer_close_button_mid_line::after {
+        display: block;
+        background-color: #000000;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(0px) rotate(45deg);
+        transition: all 0.2s;
+    }
+
+    .login_layer_close_button_mid_line::before {
+        display: block;
+        background-color: #000000;
+
+        content: '';
+        width: 30px;
+        height: 3px;
+        transform: translateY(3px) rotate(-45deg);
+        transition: all 0.2s;
     }
 }

@@ -10,6 +10,9 @@ const menuLayerMobile = document.querySelector('#menu_layer_mobile');
 const loginPopupStatusHidden = 'none'
 const loginPopupStatusShow = 'block'
 
+const loginLayerCloseButton = document.querySelector('.login_layer_close_button')
+const loginLayerMobile = document.querySelector('#login_layer_mobile')
+
 const isMobileSize = windowWidth < 576
 
 payButtonRIAO.addEventListener('click', (e) => {
@@ -34,6 +37,10 @@ if(!isMobileSize) {
             loginPopup.style.display = loginPopupStatusHidden;
         }
     })
+} else {
+    loginButton.addEventListener('click', () => {
+        loginLayerMobile.classList.add('login_layer_mobile_active')
+    })
 }
 
 burgerMenuButton.addEventListener('click', (e) => {
@@ -41,4 +48,10 @@ burgerMenuButton.addEventListener('click', (e) => {
 
     burgerMenuButton.classList.toggle('menu_burger_mid_line_active')
     menuLayerMobile.classList.toggle('menu_layer_mobile_active')
+})
+
+loginLayerCloseButton.addEventListener('click', () => {
+    loginLayerMobile.classList.remove('login_layer_mobile_active')
+    console.log('close login')
+
 })
