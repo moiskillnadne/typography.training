@@ -13,7 +13,7 @@ body {
 .root {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0px 35px 0px 35px;
+    padding: 0px 54px 0px 54px;
 }
 
 header {
@@ -22,6 +22,11 @@ header {
 
     display: grid;
     grid-template-columns: 3fr 2fr;
+}
+
+.content_layer {
+    width: 892px;
+    margin: 0 auto;
 }
 
 .margin_bottom {
@@ -49,7 +54,7 @@ header {
     font-weight: 500;
     cursor: default;
     font-size: 20px;
-    margin-right: 3px;
+    margin-right: 11px;
 }
 
 .menu_button {
@@ -63,11 +68,15 @@ header {
 
 }
 
+.active_menu_button {
+    color: #E20016;
+}
+
 .active_menu_button::after {
     content: '';
     display: block;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 11px;
     height: 2px;
     background-color: #E20016;
 }
@@ -89,8 +98,8 @@ header {
 }
 
 .auth_button > button {
-    padding: 10px 20px 11px 20px;
-    border: 1px solid #FFFFFF;
+    padding: 8px 20px 13px 20px;
+    border: 1px solid #404040;
     border-radius: 6px;
     color: #FFFFFF;
     background-color: rgba(0, 0, 0, 0);
@@ -99,10 +108,16 @@ header {
 
     font-size: 20px;
     cursor: pointer;
+    line-height: 24px;
+    transition: all 0.2s;
+}
+
+.auth_button > button:hover {
+    border-color: #FFFFFF;
 }
 
 .try_button > button {
-    padding: 10px 20px 11px 20px;
+    padding: 8px 20px 13px 20px;
 
     border: 1px solid #E20016;
     border-radius: 6px;
@@ -113,7 +128,13 @@ header {
 
     font-size: 20px;
     cursor: pointer;
+    line-height: 24px;
+    transition: all 0.2s;
 
+}
+
+.try_button > button:hover {
+    background-color:#C70013;
 }
 
 .main_title_wrapper {
@@ -127,7 +148,7 @@ header {
     width: 100%;
     display: block;
     height: 1px;
-    background-color: #FFFFFF;
+    background-color: #404040;
 }
 
 .main_title {
@@ -141,28 +162,33 @@ header {
     font-weight: 900;
     line-height: 107px;
 
-    margin: 44px 0px 50px 0px;
+    margin: 13px 0px 55px 0px;
+    cursor: default;
 }
 
 .main_flow {
-    padding-top: 50px;
+    padding-top: 62px;
 }
 
 .first_step {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr 1fr;
-    align-items: flex-end;
+    grid-auto-columns: 480px 412px;
+    grid-auto-rows: 430px;
 }
 
 .first_step_star {
     position: relative;
 }
 
+.lightning_block {
+    padding-top: 62px;
+}
+
 .promote_layer_star {
     position: absolute;
-    top: 87px;
-    left: 59px;
+    top: 86px;
+    left: 81px;
     width: 50%;
     color:#E20016;
     transform: rotate(-6deg);
@@ -171,21 +197,25 @@ header {
 }
 
 .first_step_star > div {
-    font-size: 24px;
+    font-size: 16px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    letter-spacing: -2px;
     margin: 0px;
-    line-height: 28.8px;
+    line-height: 19.2px;
 }
 
 .first_step_star_description {
-    width: 62%;
+    width: 77%;
+}
+
+.first_step_star_description > p {
+    margin: 4px 0px 0px 0px;
 }
 
 .second_step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 480px 412px;
+    grid-auto-rows: 731px;
 }
 
 .second_step_left_column {}
@@ -197,20 +227,20 @@ header {
 }
 
 .question_block  {
-    padding-top: 38px;
+    padding-top: 72px;
 }
 
 .second_step_all_themes_description > h3 {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    margin: 24px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 
 }
 
 .titles_default {
     letter-spacing: 7.5px;
-    margin: 24px 0px 14px 0px;
+    margin: 19px 0px 22px 0px;
 }
 
 .second_step_all_themes_description > p {
@@ -261,15 +291,21 @@ header {
 }
 
 .pay_button {
+    line-height: 48px;
     font-size: 42px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
     color: #FFFFFF;
     background-color: #E20016;
     border: 1px solid #E20016;
-    padding: 0px 25px 4px 25px;
+    padding: 0px 25px 8px 25px;
     border-radius: 6px;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pay_button:hover {
+    background-color: #C70013;
 }
 
 .pipe_block {
@@ -286,6 +322,7 @@ header {
     font-weight: 500;
     line-height: 28.8px;
     font-style: normal;
+    margin: 22px 0px 0px 0px;
 }
 
 .rule_inside_and_outside > h3 {
@@ -302,7 +339,8 @@ header {
 
 .thrid_step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 480px 412px;
+    grid-auto-rows: 485px;
 }
 
 .lightning_block_description > p {
@@ -315,10 +353,14 @@ header {
 
 .fourth_step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 480px 412px;
 }
 
 .text_layout_description {
+}
+
+.right_column {
+    padding-top: 29px;
 }
 
 .text_layout h3 {
@@ -336,7 +378,7 @@ header {
     font-size: 40px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    letter-spacing: 7.5px;
+    letter-spacing: 7px;
     line-height: 50px;
 }
 
@@ -348,15 +390,18 @@ header {
 }
 
 .footer {
-    padding-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding-top: 56px;
     width: 100%;
-    height: 100px;
-    align-items: center;
+    height: 86px;
     font-size: 16px;
     font-family: "FuturaNowText-Rg";
     font-weight: 400;
+}
+
+.footer_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 
 .footer a {
@@ -365,13 +410,18 @@ header {
 }
 
 .documents {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+}
+
+.documents_list {
+    display: flex;
+    gap: 16px
 }
 
 .documents > div {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: space-around;
 }
 
 .mail {
