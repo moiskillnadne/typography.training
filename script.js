@@ -10,6 +10,7 @@ window.onload = async () => {
     const accountButton = document.querySelector('#account_button');
     const accountPopup = document.querySelector('#account_popup');
     const logoutButton = document.querySelector('#logout_button');
+    const accountEmailLabel = document.querySelector('#account_email')
 
     const payButtonRIAO = document.querySelector('#rule_inside_and_outside_pay_button');
     const payButtonAnchorObjects = document.querySelector('#anchor_objects')
@@ -75,6 +76,21 @@ window.onload = async () => {
                 if(accountPopup.style.display === loginPopupStatusHidden || accountPopup.style.display === '') {
                     accountPopup.style.display = loginPopupStatusShow;
                     accountPopup.style.left = `${buttonRect.x - 15}px`
+                    
+                    const localStorageEmail = localStorage.getItem('email')
+                    let emailLabel
+
+                    if(localStorageEmail.length > 25) {
+                        emailLabel = `${localStorageEmail.slice(0, 25)}...`
+                    } else {
+                        emailLabel = localStorageEmail
+                    }
+
+                    const children = accountEmailLabel.childNodes
+                    if(!children[0]) {
+                        const emailLabelNode = document.createTextNode(emailLabel)
+                        accountEmailLabel.appendChild(emailLabelNode)
+                    }
                 } else {
                     accountPopup.style.display = loginPopupStatusHidden;
                 }
@@ -105,6 +121,7 @@ window.onload = async () => {
         if(validateEmail(email)) {
             sendEmailButton.disabled = false
             sendEmailButton.style.backgroundColor = '#000000';
+            sendEmailButton.style.border = '2px solid #000000'
         } else {
             sendEmailButton.disabled = true
         }
