@@ -10,6 +10,11 @@ body {
     margin: 0px;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .root {
     max-width: 1000px;
     margin: 0 auto;
@@ -98,22 +103,27 @@ header {
 }
 
 .auth_button > button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#login_button {
     padding: 8px 20px 13px 20px;
     border: 1px solid #404040;
     border-radius: 6px;
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0);
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-
     font-size: 20px;
     cursor: pointer;
     line-height: 24px;
     transition: all 0.2s;
 }
 
-.auth_button > button:hover {
+#login_button:hover {
     border-color: #FFFFFF;
+
 }
 
 .try_button > button {
@@ -326,6 +336,10 @@ header {
     background-color: #C70013;
 }
 
+.active_loading {
+    animation: loading 1.5s ease-in-out infinite;
+}
+
 .pipe_block {
     position: relative;
     padding-top: 4px;
@@ -439,6 +453,14 @@ header {
     gap: 16px
 }
 
+.documents_list a:hover {
+    text-decoration: underline;
+}
+
+.school_buro > a:hover {
+    text-decoration: underline;
+}
+
 .documents > div {
     display: flex;
     justify-content: space-around;
@@ -446,6 +468,14 @@ header {
 
 .mail {
     justify-items: flex-end;
+}
+
+#account_button {
+    display: none;
+}
+
+#login_button {
+    display: none;
 }
 
 
@@ -458,7 +488,17 @@ header {
     width: 360px;
     background-color: #FFFFFF;
 
-    padding: 22px;
+    padding: 24px 20px;
+}
+
+#account_popup {
+    display: none;
+
+    position: absolute;
+    top: 80px;
+    right: 260px;
+    width: 226px;
+    background-color: #FFFFFF;
 }
 
 .square_arrow { 
@@ -470,6 +510,58 @@ header {
     top: -10px;
     left: 195px;
     transform: rotate(45deg);
+}
+
+.square_arrow_account {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    transform: rotate(45deg); 
+}
+
+.account_popup_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+}
+
+.email_data_account {
+    padding: 24px 0px 16px 12px;
+}
+.email_data_account > p{
+    color: #000000;
+    font-size: 16px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    line-height: 20px;
+}
+
+
+.logout_button > button{
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 16px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    line-height: 20px;
+    text-align: start;
+    padding-left: 12px;
+    transition: all 0.2s;
+    padding: 3px 0px 8px 12px;
+}
+
+.logout_button > button:hover{
+    background-color: #E20016;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .enter_labels {
@@ -509,12 +601,13 @@ header {
     font-family: "FuturaNowText-Rg";
     font-weight: 400;
     text-indent: 13px;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 
 }
 
 .enter_email_option > input::placeholder {
     color: #C6C6C6;
+    padding-bottom: 10px;
 }
 
 .enter_email_option > button{
@@ -524,12 +617,14 @@ header {
 
 .enter_buro_option {}
 
-.label_or {
+.label_or > p {
+    margin: 6px 0px 14px 0px;
     color: #000000;
     font-size: 16px;
     font-family: "FuturaNowText-Rg";
     font-weight: 400;
     text-align: center;
+    line-height: 18px;
 }
 
 .enter_with_buro_button > button {
@@ -544,7 +639,8 @@ header {
     font-family: "FuturaNowText-Md";
     font-weight: 500;
 
-    padding-bottom: 7px;
+    line-height: 24px;
+    padding: 0px 0px 5px 0px;
 }
 
 .enter_with_buro_description > p {
@@ -552,6 +648,8 @@ header {
     font-size: 13px;
     font-family: "FuturaNowText-Rg";
     font-weight: 400;
+    line-height: 15px;
+    margin: 8px 0px 0px 0px;
 }
 
 .second_step_all_themes_mobile_mode {
@@ -924,5 +1022,15 @@ header {
         height: 3px;
         transform: translateY(3px) rotate(-45deg);
         transition: all 0.2s;
+    }
+}
+
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
