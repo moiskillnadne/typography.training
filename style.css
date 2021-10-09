@@ -184,7 +184,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 480px 412px;
-    grid-auto-rows: 321px;
+    grid-auto-rows: 1px;
 }
 
 .first_step_star {
@@ -229,17 +229,11 @@ header {
 }
 
 .second_step_left_column {
-    padding-top: 100px;
+    padding-top: 440px;
 }
 
 .left_column {
-    padding-top: 114px;
-}
-
-.second_step_all_themes {}
-
-.second_step_double_circles_object {
-    /* padding-top: 62px; */
+    padding-top: 456px;
 }
 
 .question_block  {
@@ -268,9 +262,6 @@ header {
     line-height: 28.8px;
 }
 
-
-.second_step_all_themes_price {
-}
 
 .lightning_block_object {
     padding-bottom: 14px;
@@ -374,7 +365,7 @@ header {
 .thrid_step {
     display: grid;
     grid-template-columns: 480px 412px;
-    grid-auto-rows: 342px;
+    grid-auto-rows: 1px;
 }
 
 .lightning_block_description > p {
@@ -388,9 +379,6 @@ header {
 .fourth_step {
     display: grid;
     grid-template-columns: 480px 412px;
-}
-
-.text_layout_description {
 }
 
 .right_column {
@@ -591,6 +579,8 @@ header {
 
     width: 100%;
     height: 45px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
     outline: 1px solid rgba(0,0,0, 0.14);
     outline-offset: -1px;
 }
@@ -614,9 +604,9 @@ header {
     border: none;
     height: 100%;
     background-color: #CCCCCC;
+    border: 1px solid #CCCCCC;
+    border-radius: 0px 3px px 0px;
 }
-
-.enter_buro_option {}
 
 .label_or > p {
     margin: 6px 0px 14px 0px;
