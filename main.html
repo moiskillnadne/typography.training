@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./MyFontsWebfontsKit//MyFontsWebfontsKit.css"/>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./paymodal.css">
 
     <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
     <meta name="yandex-verification" content="6122255da7e1c25e" />
@@ -124,7 +125,7 @@
                         <div class="second_step_left_column">
                             <div class="second_step_all_themes">
                                 <div class="second_step_all_themes_description">
-                                    <h3 class="titles_default">ВСЕ ТЕМЫ</h3>
+                                    <h3 class="titles_default">ВСЕ<span> </span>ТЕМЫ</h3>
                                     <p>Все будущие упражнения <br />и обновления бесплатно</p>
                                 </div>
                                 <div class="second_step_all_themes_price">
@@ -133,7 +134,8 @@
                                     </div>
                                     <div class="current_price price_data_block_big">
                                         <div>
-                                            <button class="pay_button" id="all_themes_pay_button">1999 ₽</button>
+                                            <!-- <button class="pay_button" id="all_themes_pay_button" data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button> -->
+                                            <button class="study_button" id="all_theme_study_button">Заниматься</button>
                                         </div>
                                         <div class="lesson_description">
                                             <div>
@@ -190,7 +192,8 @@
                                 </div>
                                 <div class="current_price price_data_block_small">
                                     <div>
-                                        <button class="pay_button" id="rule_inside_and_outside_pay_button">599 ₽</button>
+                                        <!-- <button class="pay_button" id="rule_inside_and_outside_pay_button" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">599 ₽</button> -->
+                                        <button class="study_button" id="inside_and_outside_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
@@ -229,14 +232,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="lightning_block">
+                        <div class="lightning_block">
                             <div class="lightning_block_object">
                                 <img src="./media/lightning_object.svg" loading="lazy"></img>
                             </div>
                             <div class="lightning_block_description">
                                 <p>При покупке любого раздела <br /> все будущие обновления <br /> раздела — бесплатно</p>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
     
                     <div class="fourth_step">
@@ -247,7 +250,8 @@
                                 </div>
                                 <div class="current_price price_data_block_three_number">
                                     <div>
-                                        <button class="pay_button">599 ₽</button>
+                                        <!-- <button class="pay_button" id="text_layout_pay_button" data-price="599" data-title="ВЁРСТКА ТЕКСТА">599 ₽</button> -->
+                                        <button class="study_button" id="layout_text_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
@@ -295,7 +299,8 @@
                                     </div>
                                     <div class="current_price price_data_block_three_number">
                                         <div>
-                                            <button class="pay_button">599 ₽</button>
+                                            <!-- <button class="pay_button" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button> -->
+                                            <button class="study_button" id="mobule_study_button">Заниматься</button>
                                         </div>
                                         <div class="lesson_description">
                                             <div>
@@ -320,7 +325,8 @@
                                 </div>
                                 <div class="current_price price_data_block_small">
                                     <div>
-                                        <button class="pay_button" id="anchor_objects">599 ₽</button>
+                                        <!-- <button class="pay_button" id="anchor_objects" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">599 ₽</button> -->
+                                        <button class="study_button" id="anchor_objects_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
@@ -453,8 +459,13 @@
         </div>
     </div>
 
-    <div id="payment-form"></div>
+    <div id="pay_layout">
+        <div class="pay_layout_content_wrapper">
+            <div id="payment-form"></div>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
+    <script src="./pay.js"></script>
 </body>
 </html>

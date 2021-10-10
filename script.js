@@ -12,9 +12,6 @@ window.onload = async () => {
     const logoutButton = document.querySelector('#logout_button');
     const accountEmailLabel = document.querySelector('#account_email')
 
-    const payButtonRIAO = document.querySelector('#rule_inside_and_outside_pay_button');
-    const payButtonAnchorObjects = document.querySelector('#anchor_objects')
-
     const burgerMenuButton = document.querySelector('.menu_burger_mid_line');
     const menuLayerMobile = document.querySelector('#menu_layer_mobile');
 
@@ -30,14 +27,6 @@ window.onload = async () => {
 
     const isMobileSize = windowWidth < 576
 
-    payButtonRIAO.addEventListener('click', (e) => {
-        window.location.href = './pages/inexternal/1.html'
-    })
-
-    payButtonAnchorObjects.addEventListener('click', () => {
-        window.location.href = './pages/anchor/1.html'
-    })
-
     if(localStorage.getItem('email')) {
         loginButton.style.display = 'none'
         accountButton.style.display = 'block'
@@ -45,6 +34,7 @@ window.onload = async () => {
         loginButton.style.display = 'block'
         accountButton.style.display = 'none'
     }
+
 
     if(!isMobileSize) {
         if(loginButton) {
@@ -164,7 +154,6 @@ window.onload = async () => {
     const urlParams = new URLSearchParams(queryString)
     const token = urlParams.get('token')
 
-    console.log('inside domcontentloaded')
 
     if(token) {
         const resp = await fetch(`${backend}/verifyToken`, {
@@ -186,6 +175,40 @@ window.onload = async () => {
         }
         
     }
+
+    const paymentToken = urlParams.get('paymentToken')
+    const lessonTitle = urlParams.get('lesson')
+    const userEmail = urlParams.get('user')
+
+    if(paymentToken && lessonTitle && userEmail) {
+        const resp = await fetch(`${backend}/checkPayment`, {
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify({
+                paymentToken,
+                email: userEmail,
+                lesson: lessonTitle
+            })
+        })
+        console.log(paymentToken)
+        console.log(lessonTitle)
+        console.log(userEmail)
+
+        const json = await resp.json()
+
+        console.log(json)
+
+        // if(resp.ok) {
+        //     localStorage.setItem('email', json.email)
+        //     window.location.search = ''
+
+        //     loginButton.style.display = 'none'
+        //     accountButton.style.display = 'block'
+        // }
+        
+    }
+
+
 }
 
 
