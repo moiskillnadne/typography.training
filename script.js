@@ -25,14 +25,43 @@ window.onload = async () => {
     const sendEmailButton = document.querySelector('#send_email_button')
     const sendEmailButtonIcon = document.querySelector('#send_email_button_icon')
 
-    const isMobileSize = windowWidth < 576
 
-    if(localStorage.getItem('email')) {
+    const allThemesPayButton = document.querySelector('#all_themes_pay_button');
+    const firstStepCirclesImg = document.querySelector('#first_step_circles_img')
+    const allThemesTitle = document.querySelector('#all_themes_title');
+    const allThemes = document.querySelector('#all_themes_card');
+    const insideAndOutsideCard = document.querySelector('#inside_and_outside_card');
+
+    const allThemesStudyButton = document.querySelector('#all_theme_study_button');
+    const insideAndOutsideStudyButton = document.querySelector('#inside_and_outside_study_button');
+    const textLayoutStudyButton = document.querySelector('#layout_text_study_button');
+    const anchorObjectStudyButton = document.querySelector('#anchor_objects_study_button');
+    const moduleStudyButton = document.querySelector('#module_study_button'); 
+
+    const isMobileSize = windowWidth < 576
+    const email = localStorage.getItem('email')
+
+    console.log(email)
+
+    if(email) {
         loginButton.style.display = 'none'
         accountButton.style.display = 'block'
     } else {
         loginButton.style.display = 'block'
         accountButton.style.display = 'none'
+    }
+
+    if(email) {
+        console.log('inner email block')
+        const result = await fetch(`${backend}/getPaidLessons`, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: email
+            })
+        })
+
+        const lessons = await result.json()
+        showButtonCondition(lessons)
     }
 
 
@@ -190,24 +219,57 @@ window.onload = async () => {
                 lesson: lessonTitle
             })
         })
-        console.log(paymentToken)
-        console.log(lessonTitle)
-        console.log(userEmail)
 
-        const json = await resp.json()
+        window.location.search = ''
 
-        console.log(json)
 
-        // if(resp.ok) {
-        //     localStorage.setItem('email', json.email)
-        //     window.location.search = ''
+        const result = await fetch(`${backend}/getPaidLessons`, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: email
+            })
+        })
 
-        //     loginButton.style.display = 'none'
-        //     accountButton.style.display = 'block'
-        // }
+        const lessons = await result.json()
+        showButtonCondition(lessons)
         
     }
 
+    function showButtonCondition(lessons) {
+        console.log(allThemesStudyButton)
+
+        lessons.forEach(lesson => {
+            switch(lesson.lesson) {
+                case 'ВСЕ ТЕМЫ':
+                    allThemesPayButton.style.display = 'none'
+                    allThemesStudyButton.style.display = 'block'
+                    break;
+
+                case 'ВНУТРЕННЕE И ВНЕШНЕE':
+                    ruleInsideAndOutsidePayButton.style.display = 'none'
+                    insideAndOutsideStudyButton.style.display = 'block'
+                    break;
+                
+                case 'ВЁРСТКА ТЕКСТА':
+                    textLayoutPayButton.style.display = 'none'
+                    textLayoutStudyButton.style.display = 'block'
+                    break;
+                
+                case 'ЯКОРНЫЕ ОБЪЕКТЫ':
+                    anchorObjectPayButton.style.display = 'none'
+                    anchorObjectStudyButton.style.display = 'block'
+                    break;
+                
+                // case 'МОДУЛИ':
+                //     mobulePayButton.style.display = 'none'
+                //     moduleStudyButton.style.display = 'block'
+                //     break;
+
+                default:
+                    console.log('Something wrong with switch case..')
+            }
+        })
+    }
 
 }
 

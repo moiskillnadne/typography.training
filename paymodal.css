@@ -22,3 +22,11 @@
     min-height: 380px;
     background-color: #FFFFFF;
 }
+
+#all_themes_card {
+    cursor: pointer;
+}
+
+#inside_and_outside_card {
+    cursor: pointer;
+}

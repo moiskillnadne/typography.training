@@ -69,9 +69,9 @@
                                 <img src="./media/icons/user.svg" loading="lazy"></img>
                             </button>
                         </div>
-                        <!-- <div class="try_button">
+                        <div class="try_button" id="try_button">
                             <button type="button">Попробовать</button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </header>
@@ -85,7 +85,7 @@
                 <div class="main_flow">
                     <div class="first_step">
                         <div class="first_step_circles">
-                            <img src="./media/illustration.svg"></img>
+                            <img src="./media/illustration.svg" id="first_step_circles_img" data-price="1999" data-title="ВСЕ ТЕМЫ"></img>
                         </div>
                         <div class="second_step_all_themes_mobile_mode">
                             <div class="second_step_all_themes_description">
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="lesson_description">
                                         <div>
-                                            30 задач
+                                            35 задач
                                         </div>
                                         <div>
                                             <img src="./media/icons/watch.svg"></img>
@@ -122,10 +122,10 @@
                     </div>
     
                     <div class="second_step">
-                        <div class="second_step_left_column">
+                        <div class="second_step_left_column" id="all_themes_card" data-price="1999" data-title="ВСЕ ТЕМЫ">
                             <div class="second_step_all_themes">
                                 <div class="second_step_all_themes_description">
-                                    <h3 class="titles_default">ВСЕ<span> </span>ТЕМЫ</h3>
+                                    <h3 id="all_themes_title" class="titles_default">ВСЕ<span> </span>ТЕМЫ</h3>
                                     <p>Все будущие упражнения <br />и обновления бесплатно</p>
                                 </div>
                                 <div class="second_step_all_themes_price">
@@ -134,17 +134,17 @@
                                     </div>
                                     <div class="current_price price_data_block_big">
                                         <div>
-                                            <!-- <button class="pay_button" id="all_themes_pay_button" data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button> -->
+                                            <button class="pay_button" id="all_themes_pay_button" data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button>
                                             <button class="study_button" id="all_theme_study_button">Заниматься</button>
                                         </div>
                                         <div class="lesson_description">
                                             <div>
-                                                30 задач
+                                                35 задач
                                             </div>
-                                            <div>
+                                            <!-- <div>
                                                 <img src="./media/icons/watch.svg"></img>
                                                 6 часов
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -165,10 +165,10 @@
                                             <div>
                                                 10 задач
                                             </div>
-                                            <div>
+                                            <!-- <div>
                                                 <img src="./media/icons/watch.svg"></img>
                                                 1 час
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -182,27 +182,27 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="second_step_right_column margin_bottom">
+                        <div class="second_step_right_column margin_bottom" id="inside_and_outside_card" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">
                             <div class="second_step_double_circles_object">
-                                <img src="./media/Illustration_steptwo.svg"></img>
+                                <img src="./media/Illustration_steptwo.svg"  id="double_circles_img" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE"></img>
                             </div>
                             <div>
                                 <div class="rule_inside_and_outside">
-                                    <h3 class="titles_default">ВНУТРЕННЕE<br /> И<span> </span>ВНЕШНЕE</h3>
+                                    <h3 class="titles_default" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">ВНУТРЕННЕE<br /> И<span> </span>ВНЕШНЕE</h3>
                                 </div>
                                 <div class="current_price price_data_block_small">
                                     <div>
-                                        <!-- <button class="pay_button" id="rule_inside_and_outside_pay_button" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">599 ₽</button> -->
+                                        <button class="pay_button" id="rule_inside_and_outside_pay_button" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">599 ₽</button>
                                         <button class="study_button" id="inside_and_outside_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
-                                            10 задач
+                                            12 задач
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <img src="./media/icons/watch.svg"></img>
                                             1 час
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
     
                     <div class="thrid_step">
                         <div class="question_block">
-                            <img src="./media/question.svg"></img>
+                            <img src="./media/question.svg"  id="question_block_img"></img>
                         </div>
                         <div class="text_layout_mobile_mode">
                             <div class="text_layout_description">
@@ -225,16 +225,16 @@
                                     <div>
                                         10 задач
                                     </div>
-                                    <div>
+                                    <!-- <div>
                                         <img src="./media/icons/watch.svg"></img>
                                         1 час
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                         <div class="lightning_block">
                             <div class="lightning_block_object">
-                                <img src="./media/lightning_object.svg" loading="lazy"></img>
+                                <img src="./media/lightning_object.svg" loading="lazy" id="lightning_block_object"></img>
                             </div>
                             <div class="lightning_block_description">
                                 <p>При покупке любого раздела <br /> все будущие обновления <br /> раздела — бесплатно</p>
@@ -250,17 +250,17 @@
                                 </div>
                                 <div class="current_price price_data_block_three_number">
                                     <div>
-                                        <!-- <button class="pay_button" id="text_layout_pay_button" data-price="599" data-title="ВЁРСТКА ТЕКСТА">599 ₽</button> -->
+                                        <button class="pay_button" id="text_layout_pay_button" data-price="599" data-title="ВЁРСТКА ТЕКСТА">599 ₽</button>
                                         <button class="study_button" id="layout_text_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
                                             10 задач
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <img src="./media/icons/watch.svg"></img>
                                             1 час
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -281,17 +281,17 @@
                                             <div>
                                                 10 задач
                                             </div>
-                                            <div>
+                                            <!-- <div>
                                                 <img src="./media/icons/watch.svg"></img>
                                                 1 час
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="four_circles_block">
                                 <div class="four_circles_object">
-                                    <img src="./media/four_circles.svg"></img>
+                                    <img src="./media/four_circles.svg" id="four_circles_img"></img>
                                 </div>
                                 <div>
                                     <div class="modular">
@@ -299,17 +299,18 @@
                                     </div>
                                     <div class="current_price price_data_block_three_number">
                                         <div>
-                                            <!-- <button class="pay_button" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button> -->
-                                            <button class="study_button" id="mobule_study_button">Заниматься</button>
+                                            <button class="pay_button" style="display: none;" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button>
+                                            <button class="study_button" style="display: none;" id="module_study_button">Заниматься</button>
+                                            <button class="soon_label">Скоро</button>
                                         </div>
                                         <div class="lesson_description">
                                             <div>
                                                 10 задач
                                             </div>
-                                            <div>
+                                            <!-- <div>
                                                 <img src="./media/icons/watch.svg"></img>
                                                 1 час
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +318,7 @@
                         </div>
                         <div class="right_column">
                             <div class="triangle_object">
-                                <img src="./media/triangle.svg"></img>
+                                <img src="./media/triangle.svg" id="triangle_object_img"></img>
                             </div>
                             <div>
                                 <div class="rule_object">
@@ -325,17 +326,17 @@
                                 </div>
                                 <div class="current_price price_data_block_small">
                                     <div>
-                                        <!-- <button class="pay_button" id="anchor_objects" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">599 ₽</button> -->
+                                        <button class="pay_button" id="anchor_objects" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">599 ₽</button>
                                         <button class="study_button" id="anchor_objects_study_button">Заниматься</button>
                                     </div>
                                     <div class="lesson_description">
                                         <div>
-                                            10 задач
+                                            13 задач
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <img src="./media/icons/watch.svg"></img>
                                             1 час
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -467,5 +468,6 @@
 
     <script src="./script.js"></script>
     <script src="./pay.js"></script>
+    <!-- <script src="./style.js"></script> -->
 </body>
 </html>

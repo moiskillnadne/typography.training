@@ -1,6 +1,11 @@
 
 const payLayout = document.querySelector('#pay_layout');
 const allThemesPayButton = document.querySelector('#all_themes_pay_button');
+const firstStepCirclesImg = document.querySelector('#first_step_circles_img')
+const allThemesTitle = document.querySelector('#all_themes_title');
+const allThemes = document.querySelector('#all_themes_card');
+const insideAndOutsideCard = document.querySelector('#inside_and_outside_card');
+
 const ruleInsideAndOutsidePayButton = document.querySelector('#rule_inside_and_outside_pay_button');
 const textLayoutPayButton = document.querySelector('#text_layout_pay_button');
 const anchorObjectPayButton = document.querySelector('#anchor_objects');
@@ -11,7 +16,12 @@ const insideAndOutsideStudyButton = document.querySelector('#inside_and_outside_
 const textLayoutStudyButton = document.querySelector('#layout_text_study_button');
 const anchorObjectStudyButton = document.querySelector('#anchor_objects_study_button');
 const moduleStudyButton = document.querySelector('#module_study_button');
+const tryButton = document.querySelector('#try_button');
 
+
+tryButton.addEventListener('click', () => {
+    window.location.href = './pages/tryout/1.html';
+})
 
 insideAndOutsideStudyButton.addEventListener('click', (e) => {
     window.location.href = './pages/inexternal/1.html';
@@ -34,6 +44,9 @@ ruleInsideAndOutsidePayButton.addEventListener('click', payButtonOnclick)
 textLayoutPayButton.addEventListener('click', payButtonOnclick)
 anchorObjectPayButton.addEventListener('click', payButtonOnclick)
 mobulePayButton.addEventListener('click', payButtonOnclick)
+
+allThemes.addEventListener('click', payButtonOnclick)
+insideAndOutsideCard.addEventListener('click', payButtonOnclick)
 
 
 function closePayModalAnimation(e) {
@@ -78,7 +91,7 @@ function openPayModalAnimation(token, id, title) {
 }
 
 async function payButtonOnclick(e) {
-    console.log(e.target.dataset.price)
+    e.stopImmediatePropagation();
 
     const body = {
         price: e.target.dataset.price,
