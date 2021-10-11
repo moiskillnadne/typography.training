@@ -22,8 +22,11 @@ window.onload = async () => {
     const loginLayerMobile = document.querySelector('#login_layer_mobile')
 
     const loginInput = document.querySelector('#login_email_input')
+    const loginInputLayout = document.querySelector('#login_email_input_layout')
     const sendEmailButton = document.querySelector('#send_email_button')
+    const sendEmailButtonLayout = document.querySelector('#send_email_button_layout')
     const sendEmailButtonIcon = document.querySelector('#send_email_button_icon')
+    const sendEmailButtonIconLayout = document.querySelector('#send_email_button_icon_layout')
 
 
     const allThemesPayButton = document.querySelector('#all_themes_pay_button');
@@ -41,7 +44,6 @@ window.onload = async () => {
     const isMobileSize = windowWidth < 576
     const email = localStorage.getItem('email')
 
-    console.log(email)
 
     if(email) {
         loginButton.style.display = 'none'
@@ -94,7 +96,7 @@ window.onload = async () => {
         
                 if(accountPopup.style.display === loginPopupStatusHidden || accountPopup.style.display === '') {
                     accountPopup.style.display = loginPopupStatusShow;
-                    accountPopup.style.left = `${buttonRect.x - 15}px`
+                    accountPopup.style.left = `${buttonRect.x - 152}px`
                     
                     const localStorageEmail = localStorage.getItem('email')
                     let emailLabel
@@ -134,17 +136,9 @@ window.onload = async () => {
 
     })
 
-    loginInput.addEventListener('input', (e) => {
-        const email = e.target.value
+    loginInput.addEventListener('input', onLoginInputChange)
 
-        if(validateEmail(email)) {
-            sendEmailButton.disabled = false
-            sendEmailButton.style.backgroundColor = '#000000';
-            sendEmailButton.style.border = '2px solid #000000'
-        } else {
-            sendEmailButton.disabled = true
-        }
-    })
+    loginInputLayout.addEventListener('input', (e) => onLoginInputChange(e, true))
 
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('email')
@@ -174,6 +168,29 @@ window.onload = async () => {
                 console.log(json)
                 sendEmailButtonIcon.classList.toggle('active_loading')
                 sendEmailButtonIcon.src = './media/icons/check.png'
+            }
+        }
+    })
+
+    sendEmailButtonLayout.addEventListener('click', async (e) => {
+        sendEmailButtonIconLayout.src = './media/icons/loading.svg'
+        sendEmailButtonIconLayout.classList.toggle('active_loading')
+
+        const emailValue = loginInputLayout.value
+
+        if(validateEmail(emailValue)) {
+            const resp = await fetch(`${backend}/sendemailcode`, {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify({
+                    email: emailValue
+                })
+            })
+            const json = await resp.json()
+            if(resp.ok) {
+                console.log(json)
+                sendEmailButtonIconLayout.classList.toggle('active_loading')
+                sendEmailButtonIconLayout.src = './media/icons/check.png'
             }
         }
     })
@@ -243,6 +260,16 @@ window.onload = async () => {
                 case 'ВСЕ ТЕМЫ':
                     allThemesPayButton.style.display = 'none'
                     allThemesStudyButton.style.display = 'block'
+                    allThemesStudyButton.innerHTML = 'Куплено'
+                    allThemesStudyButton.classList.remove('study_button')
+                    allThemesStudyButton.classList.add('bought_button')
+
+                    ruleInsideAndOutsidePayButton.style.display = 'none'
+                    insideAndOutsideStudyButton.style.display = 'block'
+                    textLayoutPayButton.style.display = 'none'
+                    textLayoutStudyButton.style.display = 'block'
+                    anchorObjectPayButton.style.display = 'none'
+                    anchorObjectStudyButton.style.display = 'block'
                     break;
 
                 case 'ВНУТРЕННЕE И ВНЕШНЕE':
@@ -269,6 +296,29 @@ window.onload = async () => {
                     console.log('Something wrong with switch case..')
             }
         })
+    }
+
+    function onLoginInputChange(e, isLayout = false) {
+        const email = e.target.value
+        
+
+        if(!isLayout) {
+            if(validateEmail(email)) {
+                sendEmailButton.disabled = false
+                sendEmailButton.style.backgroundColor = '#000000';
+                sendEmailButton.style.border = '2px solid #000000'
+            } else {
+                sendEmailButton.disabled = true
+            }
+        } else {
+            if(validateEmail(email)) {
+                sendEmailButtonLayout.disabled = false
+                sendEmailButtonLayout.style.backgroundColor = '#000000';
+                sendEmailButtonLayout.style.border = '2px solid #000000'
+            } else {
+                sendEmailButtonLayout.disabled = true
+            }
+        }
     }
 
 }

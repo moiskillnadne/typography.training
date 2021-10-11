@@ -17,6 +17,7 @@ const textLayoutStudyButton = document.querySelector('#layout_text_study_button'
 const anchorObjectStudyButton = document.querySelector('#anchor_objects_study_button');
 const moduleStudyButton = document.querySelector('#module_study_button');
 const tryButton = document.querySelector('#try_button');
+const authLayout = document.querySelector('#auth_layout');
 
 
 tryButton.addEventListener('click', () => {
@@ -38,6 +39,18 @@ textLayoutStudyButton.addEventListener('click', (e) => {
 let checkout;
 
 payLayout.addEventListener('click', closePayModalAnimation)
+authLayout.addEventListener('click', (e) => {
+    const isLayout = e.target == authLayout
+
+    if(isLayout) {
+        authLayout.style.backdropFilter = 'blur(0);'
+        authLayout.style.opacity = '0'
+        
+        setTimeout(() => {
+            authLayout.style.display = 'none';
+        }, 500)
+    }
+})
 
 allThemesPayButton.addEventListener('click', payButtonOnclick)
 ruleInsideAndOutsidePayButton.addEventListener('click', payButtonOnclick)
@@ -93,20 +106,29 @@ function openPayModalAnimation(token, id, title) {
 async function payButtonOnclick(e) {
     e.stopImmediatePropagation();
 
-    const body = {
-        price: e.target.dataset.price,
-        title: e.target.dataset.title
+    const email = localStorage.getItem('email')
+
+    if(email) {
+        const body = {
+            price: e.target.dataset.price,
+            title: e.target.dataset.title
+        }
+
+        const result = await fetch(`${backend}/createBill`, {
+            method: "POST",
+            body: JSON.stringify(body)
+        })
+
+        const paymentObject = await result.json()
+
+        if(result.ok) {
+            console.log(paymentObject)
+            openPayModalAnimation(paymentObject.confirmation.confirmation_token, paymentObject.id, body.title)
+        }
+    } else {
+        authLayout.style.display = 'grid';
+
+        authLayout.style.backdropFilter = 'blur(16)'
+        authLayout.style.opacity = '1'
     }
-
-    const result = await fetch(`${backend}/createBill`, {
-        method: "POST",
-        body: JSON.stringify(body)
-    })
-
-    const paymentObject = await result.json()
-
-    if(result.ok) {
-        console.log(paymentObject)
-        openPayModalAnimation(paymentObject.confirmation.confirmation_token, paymentObject.id, body.title)
-    } 
 }

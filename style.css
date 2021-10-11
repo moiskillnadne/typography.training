@@ -344,8 +344,8 @@ header {
     font-family: "FuturaNowText-Md";
     font-weight: 500;
     color: #FFFFFF;
-    background-color: #E20016;
-    border: 1px solid #E20016;
+    background-color: #666666;
+    border: 1px solid #666666;
     padding: 3px 25px 11px 25px;
     border-radius: 6px;
 }
@@ -369,6 +369,20 @@ header {
 .study_button:hover {
     background-color: #E9E9E9;
     border-color: #E9E9E9;
+}
+
+.bought_button {
+    display: none;
+
+    line-height: 24px;
+    font-size: 28px;
+    font-family: "FuturaNowText-Md";
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #666666;
+    border: 1px solid #666666;
+    padding: 10px 25px 22px 25px;
+    border-radius: 6px;
 }
 
 .active_loading {
@@ -523,6 +537,15 @@ header {
     padding: 24px 20px;
 }
 
+#login_popup_layout {
+
+    right: 260px;
+    width: 360px;
+    background-color: #FFFFFF;
+
+    padding: 24px 20px;
+}
+
 #account_popup {
     display: none;
 
@@ -551,19 +574,18 @@ header {
 
     position: absolute;
     top: -10px;
-    left: 28px;
+    right: 42px;
     transform: rotate(45deg); 
 }
 
 .account_popup_wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr;
     align-items: center;
 }
 
 .email_data_account {
-    padding: 24px 0px 16px 12px;
+    padding: 19px 0px 20px 12px;
 }
 .email_data_account > p{
     color: #000000;
@@ -583,11 +605,11 @@ header {
     font-size: 16px;
     font-family: "FuturaNowText-Md";
     font-weight: 500;
-    line-height: 20px;
+    line-height: 21px;
     text-align: start;
     padding-left: 12px;
     transition: all 0.2s;
-    padding: 3px 0px 8px 12px;
+    padding: 2px 0px 9px 12px;
 }
 
 .logout_button > button:hover{
@@ -642,7 +664,6 @@ header {
 
 .enter_email_option > input::placeholder {
     color: #C6C6C6;
-    padding-bottom: 10px;
 }
 
 .enter_email_option > button{

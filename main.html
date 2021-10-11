@@ -63,14 +63,14 @@
                 </div>
                 <div class="header_auth">
                     <div>
+                        <div class="try_button" id="try_button">
+                            <button type="button">Попробовать</button>
+                        </div>
                         <div class="auth_button">
                             <button type="button" id="login_button">Войти</button>
                             <button type="button" id="account_button">
                                 <img src="./media/icons/user.svg" loading="lazy"></img>
                             </button>
-                        </div>
-                        <div class="try_button" id="try_button">
-                            <button type="button">Попробовать</button>
                         </div>
                     </div>
                 </div>
@@ -463,6 +463,32 @@
     <div id="pay_layout">
         <div class="pay_layout_content_wrapper">
             <div id="payment-form"></div>
+        </div>
+    </div>
+
+    <div id="auth_layout">
+        <div>
+            <div id="login_popup_layout">
+                <div class="enter_labels">
+                    <h5>Вход</h5>
+                    <p>Мы отправим ссылку на авторизацию</p>
+                </div>
+                <div class="enter_email_option">
+                    <input type="email" name="" id="login_email_input_layout" placeholder="Электронная почта">
+                    <button id="send_email_button_layout"><img src="./media/icons/right_arrow.svg" alt="" id="send_email_button_icon_layout" loading="lazy"></button>
+                </div>
+                <!-- <div class="enter_buro_option">
+                    <div class="label_or">
+                        <p>или</p>
+                    </div>
+                    <div class="enter_with_buro_button">
+                        <button>Войти с Бюросферой</button>
+                    </div>
+                    <div class="enter_with_buro_description">
+                        <p>Если вы учитесь в Школе бюро, авторизируйтесь здесь. Задачник получит ваши данные из Бюросферы и откроет доступ ко всем разделам бесплатно.</p>
+                    </div>
+                </div> -->
+            </div>
         </div>
     </div>
 
