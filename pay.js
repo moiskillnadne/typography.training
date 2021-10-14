@@ -19,21 +19,111 @@ const moduleStudyButton = document.querySelector('#module_study_button');
 const tryButton = document.querySelector('#try_button');
 const authLayout = document.querySelector('#auth_layout');
 
+const globalProblems = {
+    'inexternal': {name: 'ВНУТРЕННЕE И ВНЕШНЕE', data: [1, 2, 3, 4, 5, 6, 7, 8, 10, 15, 16]},
+    'anchor': {name: 'ЯКОРНЫЕ ОБЪЕКТЫ', data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]},
+    'text': {name: 'ВЁРСТКА ТЕКСТА', data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+    'tryout': {name: 'ПОПРОБОВАТЬ', data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+};
+
 
 tryButton.addEventListener('click', () => {
     window.location.href = './pages/tryout/1.html';
 })
 
-insideAndOutsideStudyButton.addEventListener('click', (e) => {
-    window.location.href = './pages/inexternal/1.html';
+insideAndOutsideStudyButton.addEventListener('click', async (e) => {
+    const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify({
+            email: localStorage.getItem('email'),
+            lessonTitle: e.target.dataset.title
+        })
+    })
+
+    const json = await courseProgress.json()
+    console.log(json)
+    if(json.length === 0) {
+        window.location.href = `./pages/inexternal/1.html`;
+    }
+
+    const tasks = json[0].tasks
+    if(tasks.length === 0) {
+        window.location.href = `./pages/inexternal/1.html`;
+    }
+    const currentTask = tasks[tasks.length -1]
+    const currentTaskIndex = globalProblems.inexternal.data.indexOf(currentTask.id)
+    const nextTask = globalProblems.inexternal.data[currentTaskIndex + 1]
+
+    if((currentTaskIndex + 1) === globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/inexternal/final.html`;
+    }
+
+    if((currentTaskIndex + 1) !== globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/inexternal/${nextTask}.html`;
+    }
 })
 
-anchorObjectStudyButton.addEventListener('click', (e) => {
-    window.location.href = './pages/anchor/1.html';
+anchorObjectStudyButton.addEventListener('click', async (e) => {
+    const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify({
+            email: localStorage.getItem('email'),
+            lessonTitle: e.target.dataset.title
+        })
+    })
+
+    const json = await courseProgress.json()
+    if(json.length === 0) {
+        window.location.href = `./pages/anchor/1.html`;
+    }
+    const tasks = json[0].tasks
+    if(tasks.length === 0) {
+        window.location.href = `./pages/anchor/1.html`;
+    }
+    const currentTask = tasks[tasks.length -1]
+    const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
+    const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
+
+    if((currentTaskIndex + 1) === globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/anchor/final.html`;
+    }
+
+    if((currentTaskIndex + 1) !== globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/anchor/${nextTask}.html`;
+    }
 })
 
-textLayoutStudyButton.addEventListener('click', (e) => {
-    window.location.href = './pages/text/1.html'
+textLayoutStudyButton.addEventListener('click', async (e) => {
+    const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify({
+            email: localStorage.getItem('email'),
+            lessonTitle: e.target.dataset.title
+        })
+    })
+
+    const json = await courseProgress.json()
+    if(json.length === 0) {
+        window.location.href = `./pages/text/1.html`;
+    }
+    const tasks = json[0].tasks
+    if(tasks.length === 0) {
+        window.location.href = `./pages/text/1.html`;
+    }
+    const currentTask = tasks[tasks.length -1]
+    const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
+    const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
+
+    if((currentTaskIndex + 1) === globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/text/final.html`;
+    }
+
+    if((currentTaskIndex + 1) !== globalProblems.inexternal.data.length) {
+        window.location.href = `./pages/text/${nextTask}.html`;
+    }
 })
 
 let checkout;

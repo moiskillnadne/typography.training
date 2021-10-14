@@ -34,6 +34,10 @@ window.onload = async () => {
     const allThemesTitle = document.querySelector('#all_themes_title');
     const allThemes = document.querySelector('#all_themes_card');
     const insideAndOutsideCard = document.querySelector('#inside_and_outside_card');
+    const ruleInsideAndOutsidePayButton = document.querySelector('#rule_inside_and_outside_pay_button');
+    const textLayoutPayButton = document.querySelector('#text_layout_pay_button');
+    const anchorObjectPayButton = document.querySelector('#anchor_objects');
+    const mobulePayButton = document.querySelector('#module_pay_button');
 
     const allThemesStudyButton = document.querySelector('#all_theme_study_button');
     const insideAndOutsideStudyButton = document.querySelector('#inside_and_outside_study_button');
@@ -242,6 +246,7 @@ window.onload = async () => {
 
         const result = await fetch(`${backend}/getPaidLessons`, {
             method: 'POST',
+            mode: 'cors',
             body: JSON.stringify({
                 email: email
             })
