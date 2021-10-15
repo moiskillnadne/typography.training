@@ -26,23 +26,23 @@
  * © 2021 MyFonts Inc
 */
 
-
-
-  
 @font-face {
-  font-family: "FuturaNowText-Blk";
-  src: url('webFonts/FuturaNowTextBlk/font.woff2') format('woff2'), url('webFonts/FuturaNowTextBlk/font.woff') format('woff');
+  font-family: 'FuturaNowText-Blk';
+  src: url('webFonts/FuturaNowTextBlk/font.woff2') format('woff2'),
+    url('webFonts/FuturaNowTextBlk/font.woff') format('woff');
 }
 @font-face {
-  font-family: "FuturaNowText-Bd";
-  src: url('webFonts/FuturaNowTextBd/font.woff2') format('woff2'), url('webFonts/FuturaNowTextBd/font.woff') format('woff');
+  font-family: 'FuturaNowText-Bd';
+  src: url('webFonts/FuturaNowTextBd/font.woff2') format('woff2'),
+    url('webFonts/FuturaNowTextBd/font.woff') format('woff');
 }
 @font-face {
-  font-family: "FuturaNowText-Md";
-  src: url('webFonts/FuturaNowTextMd/font.woff2') format('woff2'), url('webFonts/FuturaNowTextMd/font.woff') format('woff');
+  font-family: 'FuturaNowText-Md';
+  src: url('webFonts/FuturaNowTextMd/font.woff2') format('woff2'),
+    url('webFonts/FuturaNowTextMd/font.woff') format('woff');
 }
 @font-face {
-  font-family: "FuturaNowText-Rg";
-  src: url('webFonts/FuturaNowTextRg/font.woff2') format('woff2'), url('webFonts/FuturaNowTextRg/font.woff') format('woff');
+  font-family: 'FuturaNowText-Rg';
+  src: url('webFonts/FuturaNowTextRg/font.woff2') format('woff2'),
+    url('webFonts/FuturaNowTextRg/font.woff') format('woff');
 }
-

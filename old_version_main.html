@@ -83,28 +83,62 @@
                 </div>
     
                 <div class="main_flow">
-
-                    <div>
-                        <div id="all_themes_card" data-price="1999" data-title="ВСЕ ТЕМЫ">
-                            <div class="first_step_circles">
-                                <img src="./media/illustration.svg" id="first_step_circles_img" data-price="1999" data-title="ВСЕ ТЕМЫ"></img>
+                    <div class="first_step">
+                        <div class="first_step_circles">
+                            <img src="./media/illustration.svg" id="first_step_circles_img" data-price="1999" data-title="ВСЕ ТЕМЫ"></img>
+                        </div>
+                        <div class="second_step_all_themes_mobile_mode">
+                            <div class="second_step_all_themes_description">
+                                <h3 class="titles_default">ВСЕ ТЕМЫ</h3>
+                                <p>Все будущие упражнения <br />и обновления бесплатно</p>
                             </div>
+                            <div class="second_step_all_themes_price">
+                                <div class="old_price">
+                                    <p>2396 ₽</p>
+                                </div>
+                                <div class="current_price">
+                                    <div>
+                                        <button class="pay_button">1999 ₽</button>
+                                    </div>
+                                    <div class="lesson_description">
+                                        <div>
+                                            35 задач
+                                        </div>
+                                        <div>
+                                            <img src="./media/icons/watch.svg"></img>
+                                            6 часов
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- <div class="first_step_star">
+                            <img src="./media/frame1966720.svg"></img>
+                            <div class="first_step_star_description">
+                                <p>Студентам Школы Бюро<br/> Горбунова бесплатно.<br/> Войдите с Бюросферой</p>
+                            </div>
+                        </div> -->
+                    </div>
+    
+                    <div class="second_step">
+                        <div class="second_step_left_column" id="all_themes_card" data-price="1999" data-title="ВСЕ ТЕМЫ">
                             <div class="second_step_all_themes">
                                 <div class="second_step_all_themes_description">
-                                    <h3 class="titles_default" data-price="1999" data-title="ВСЕ ТЕМЫ">ВСЕ ТЕМЫ</h3>
-                                    <p data-price="1999" data-title="ВСЕ ТЕМЫ">Все будущие упражнения <br />и обновления бесплатно</p>
+                                    <h3 id="all_themes_title" class="titles_default">ВСЕ<span> </span>ТЕМЫ</h3>
+                                    <p>Все будущие упражнения <br />и обновления бесплатно</p>
                                 </div>
                                 <div class="second_step_all_themes_price">
                                     <div class="old_price">
                                         <p>2396 ₽</p>
                                     </div>
-                                    <div class="current_price">
+                                    <div class="current_price price_data_block_big" data-price="1999" data-title="ВСЕ ТЕМЫ">
                                         <div>
-                                            <button id="all_themes_pay_button" class="pay_button"  data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button>
-                                            <button id="all_theme_study_button" class="study_button" data-title="ВСЕ ТЕМЫ" >Заниматься</button>
+                                            <button class="pay_button" id="all_themes_pay_button" data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button>
+                                            <button class="study_button" id="all_theme_study_button" data-title="ВСЕ ТЕМЫ">Заниматься</button>
                                         </div>
                                         <div class="lesson_description">
-                                            <div data-price="1999" data-title="ВСЕ ТЕМЫ">
+                                            <div>
                                                 35 задач
                                             </div>
                                             <!-- <div>
@@ -115,70 +149,40 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div id="text_layout_card" data-title="ВЁРСТКА ТЕКСТА" data-price="599">
-                            <div class="question_block">
-                                <img src="./media/question.svg"  id="question_block_img" data-title="ВЁРСТКА ТЕКСТА" data-price="599"></img>
-                            </div>
-                            <div class="text_layout">
-                                <div class="text_layout_description">
-                                    <h3 class="titles_default" data-title="ВЁРСТКА ТЕКСТА" data-price="599">ВЁРСТКА <br /> ТЕКСТА</h3>
+                            <div class="second_step_right_column_mobile_mode">
+                                <div class="second_step_double_circles_object">
+                                    <img src="./media/Illustration_steptwo.svg"></img>
                                 </div>
-                                <div class="current_price">
-                                    <div>
-                                        <button 
-                                            id="text_layout_pay_button" 
-                                            class="pay_button" 
-                                            data-title="ВЁРСТКА ТЕКСТА"
-                                            data-price="599"        >
-                                            599 ₽
-                                        </button>
-                                        <button id="layout_text_study_button" class="study_button" data-title="ВЁРСТКА ТЕКСТА">Заниматься</button>
+                                <div>
+                                    <div class="rule_inside_and_outside">
+                                        <h3 class="titles_default">ВНУТРЕННЕГО <br />И ВНЕШНЕГО</h3>
                                     </div>
-                                    <div class="lesson_description">
+                                    <div class="current_price">
                                         <div>
-                                            10 задач
+                                            <button class="pay_button">599 ₽</button>
                                         </div>
-                                        <!-- <div>
-                                            <img src="./media/icons/watch.svg"></img>
-                                            1 час
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="module_card" data-price="599" data-title="МОДУЛИ">
-                            <div class="four_circles_object">
-                                <img src="./media/four_circles.svg" id="four_circles_img" data-price="599" data-title="МОДУЛИ"></img>
-                            </div>
-                            <div>
-                                <div class="modular">
-                                    <h3 class="titles_default" data-price="599" data-title="МОДУЛИ">МОДУЛИ</h3>
-                                </div>
-                                <div class="current_price price_data_block_three_number">
-                                    <div>
-                                        <button class="pay_button" style="display: none;" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button>
-                                        <button class="study_button" style="display: none;" id="module_study_button" data-title="МОДУЛИ">Заниматься</button>
-                                        <button class="soon_label">Скоро</button>
-                                    </div>
-                                    <div class="lesson_description">
-                                        <div>
-                                            10 задач
+                                        <div class="lesson_description">
+                                            <div>
+                                                10 задач
+                                            </div>
+                                            <!-- <div>
+                                                <img src="./media/icons/watch.svg"></img>
+                                                1 час
+                                            </div> -->
                                         </div>
-                                        <!-- <div>
-                                            <img src="./media/icons/watch.svg"></img>
-                                            1 час
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
+                            <!-- <div class="pipe_block">
+                                <div>
+                                    <img src="./media/pipe_object.svg" loading="lazy"></img>
+                                </div>
+                                <div>
+                                    <p>За каждый пройденный <br /> модуль +20 баллов<br />  на Бирже Главреда</p>
+                                </div>
+                            </div> -->
                         </div>
-                    </div>
-
-                    <div>
-                        <div id="inside_and_outside_card" class="second_step_right_column margin_bottom" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">
+                        <div class="second_step_right_column margin_bottom" id="inside_and_outside_card" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">
                             <div class="second_step_double_circles_object">
                                 <img src="./media/Illustration_steptwo.svg"  id="double_circles_img" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE"></img>
                             </div>
@@ -186,7 +190,7 @@
                                 <div class="rule_inside_and_outside">
                                     <h3 class="titles_default" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">ВНУТРЕННЕE<br /> И<span> </span>ВНЕШНЕE</h3>
                                 </div>
-                                <div class="current_price price_data_block_small">
+                                <div class="current_price price_data_block_small" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">
                                     <div>
                                         <button class="pay_button" id="rule_inside_and_outside_pay_button" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">599 ₽</button>
                                         <button class="study_button" id="inside_and_outside_study_button" data-title="ВНУТРЕННЕE И ВНЕШНЕE">Заниматься</button>
@@ -203,9 +207,32 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
     
-    
-                        <div id="lightning_card" class="lightning_block">
+                    <div class="thrid_step">
+                        <div class="question_block">
+                            <img src="./media/question.svg"  id="question_block_img" data-price="599" data-title="ВЁРСТКА ТЕКСТА"></img>
+                        </div>
+                        <div class="text_layout_mobile_mode">
+                            <div class="text_layout_description">
+                                <h3 class="titles_default">ВЁРСТКА <br /> ТЕКСТА</h3>
+                            </div>
+                            <div class="current_price">
+                                <div>
+                                    <button class="pay_button">599 ₽</button>
+                                </div>
+                                <div class="lesson_description">
+                                    <div>
+                                        10 задач
+                                    </div>
+                                    <!-- <div>
+                                        <img src="./media/icons/watch.svg"></img>
+                                        1 час
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lightning_block">
                             <div class="lightning_block_object">
                                 <img src="./media/lightning_object.svg" loading="lazy" id="lightning_block_object"></img>
                             </div>
@@ -213,8 +240,83 @@
                                 <p>При покупке любого раздела <br /> все будущие обновления <br /> раздела — бесплатно</p>
                             </div>
                         </div>
+                    </div>
     
-                        <div id="anchor_object_card" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">
+                    <div class="fourth_step">
+                        <div class="left_column" id="text_layout_card" data-price="599" data-title="ВЁРСТКА ТЕКСТА">
+                            <div class="text_layout">
+                                <div class="text_layout_description" data-price="599" data-title="ВЁРСТКА ТЕКСТА">
+                                    <h3 class="titles_default" id="text_layout_title" data-price="599" data-title="ВЁРСТКА ТЕКСТА">ВЁРСТКА <br /> ТЕКСТА</h3>
+                                </div>
+                                <div class="current_price price_data_block_three_number" data-price="599" data-title="ВЁРСТКА ТЕКСТА">
+                                    <div>
+                                        <button class="pay_button" id="text_layout_pay_button" data-price="599" data-title="ВЁРСТКА ТЕКСТА">599 ₽</button>
+                                        <button class="study_button" id="layout_text_study_button" data-title="ВЁРСТКА ТЕКСТА">Заниматься</button>
+                                    </div>
+                                    <div class="lesson_description">
+                                        <div>
+                                            10 задач
+                                        </div>
+                                        <!-- <div>
+                                            <img src="./media/icons/watch.svg"></img>
+                                            1 час
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="right_column_mobile_mode">
+                                <div class="triangle_object">
+                                    <img src="./media/triangle.svg"></img>
+                                </div>
+                                <div>
+                                    <div class="rule_object">
+                                        <h3 class="titles_default">ПРАВИЛО <br /> ЯКОРНЫХ <br /> ОБЪЕКТОВ</h3>
+                                    </div>
+                                    <div class="current_price">
+                                        <div>
+                                            <button class="pay_button">599 ₽</button>
+                                        </div>
+                                        <div class="lesson_description">
+                                            <div>
+                                                10 задач
+                                            </div>
+                                            <!-- <div>
+                                                <img src="./media/icons/watch.svg"></img>
+                                                1 час
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="four_circles_block">
+                                <div class="four_circles_object">
+                                    <img src="./media/four_circles.svg" id="four_circles_img"></img>
+                                </div>
+                                <div>
+                                    <div class="modular">
+                                        <h3 class="titles_default">МОДУЛИ</h3>
+                                    </div>
+                                    <div class="current_price price_data_block_three_number">
+                                        <div>
+                                            <button class="pay_button" style="display: none;" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button>
+                                            <button class="study_button" style="display: none;" id="module_study_button" data-title="МОДУЛИ">Заниматься</button>
+                                            <button class="soon_label">Скоро</button>
+                                        </div>
+                                        <div class="lesson_description">
+                                            <div>
+                                                10 задач
+                                            </div>
+                                            <!-- <div>
+                                                <img src="./media/icons/watch.svg"></img>
+                                                1 час
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_column" id="anchor_object_card" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">
                             <div class="triangle_object">
                                 <img src="./media/triangle.svg" id="triangle_object_img" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ"></img>
                             </div>
@@ -222,7 +324,7 @@
                                 <div class="rule_object">
                                     <h3 class="titles_default" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">ЯКОРНЫЕ <br /> ОБЪЕКТЫ</h3>
                                 </div>
-                                <div class="current_price price_data_block_small">
+                                <div class="current_price price_data_block_small" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">
                                     <div>
                                         <button class="pay_button" id="anchor_objects" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">599 ₽</button>
                                         <button class="study_button" id="anchor_objects_study_button" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">Заниматься</button>
@@ -240,7 +342,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </content>
             <footer class="footer">
