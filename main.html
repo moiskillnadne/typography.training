@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(85983031, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+    });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/85983031" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +59,14 @@
     <meta name="twitter:image" content="./favicons/favicon-32x32.png" />
 
     <title>Задачник по вёрстке</title>
+
+    <script>
+        window.mobileCheck = function() {
+            let check = false;
+            (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+            return check;
+        };
+    </script>
 </head>
 <body>
     <div class="root">
@@ -82,7 +106,7 @@
                     </div>
                 </div>
     
-                <div class="main_flow">
+                <div id="main_flow" class="main_flow">
 
                     <div>
                         <div id="all_themes_card" data-price="1999" data-title="ВСЕ ТЕМЫ">
@@ -242,6 +266,162 @@
                     </div>
 
                 </div>
+
+                <div id="main_flow_mobile">
+
+                    <div id="all_themes_card_mobile" data-price="1999" data-title="ВСЕ ТЕМЫ">
+                        <div class="first_step_circles">
+                            <img src="./media/illustration.svg" id="first_step_circles_img" data-price="1999" data-title="ВСЕ ТЕМЫ"></img>
+                        </div>
+                        <div class="second_step_all_themes">
+                            <div class="second_step_all_themes_description">
+                                <h3 class="titles_default" data-price="1999" data-title="ВСЕ ТЕМЫ">ВСЕ ТЕМЫ</h3>
+                                <p data-price="1999" data-title="ВСЕ ТЕМЫ">Все будущие упражнения <br />и обновления бесплатно</p>
+                            </div>
+                            <div class="second_step_all_themes_price">
+                                <div class="old_price">
+                                    <p>2396 ₽</p>
+                                </div>
+                                <div class="current_price">
+                                    <div>
+                                        <button id="all_themes_pay_button_mobile" class="pay_button"  data-price="1999" data-title="ВСЕ ТЕМЫ">1999 ₽</button>
+                                        <button id="all_theme_study_button_mobile" class="study_button" data-title="ВСЕ ТЕМЫ" >Заниматься</button>
+                                    </div>
+                                    <div class="lesson_description">
+                                        <div data-price="1999" data-title="ВСЕ ТЕМЫ">
+                                            35 задач
+                                        </div>
+                                        <!-- <div>
+                                            <img src="./media/icons/watch.svg"></img>
+                                            6 часов
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="inside_and_outside_card_mobile" class="second_step_right_column margin_bottom" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">
+                        <div class="second_step_double_circles_object">
+                            <img src="./media/Illustration_steptwo.svg"  id="double_circles_img" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE"></img>
+                        </div>
+                        <div>
+                            <div class="rule_inside_and_outside">
+                                <h3 class="titles_default" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">ВНУТРЕННЕE<br /> И<span> </span>ВНЕШНЕE</h3>
+                            </div>
+                            <div class="current_price price_data_block_small">
+                                <div>
+                                    <button class="pay_button" id="rule_inside_and_outside_pay_button_mobile" data-price="599" data-title="ВНУТРЕННЕE И ВНЕШНЕE">599 ₽</button>
+                                    <button class="study_button" id="inside_and_outside_study_button_mobile" data-title="ВНУТРЕННЕE И ВНЕШНЕE">Заниматься</button>
+                                </div>
+                                <div class="lesson_description">
+                                    <div>
+                                        12 задач
+                                    </div>
+                                    <!-- <div>
+                                        <img src="./media/icons/watch.svg"></img>
+                                        1 час
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="text_layout_card_mobile" data-title="ВЁРСТКА ТЕКСТА" data-price="599">
+                        <div class="question_block">
+                            <img src="./media/question.svg"  id="question_block_img" data-title="ВЁРСТКА ТЕКСТА" data-price="599"></img>
+                        </div>
+                        <div class="text_layout">
+                            <div class="text_layout_description">
+                                <h3 class="titles_default" data-title="ВЁРСТКА ТЕКСТА" data-price="599">ВЁРСТКА <br /> ТЕКСТА</h3>
+                            </div>
+                            <div class="current_price">
+                                <div>
+                                    <button 
+                                        id="text_layout_pay_button_mobile" 
+                                        class="pay_button" 
+                                        data-title="ВЁРСТКА ТЕКСТА"
+                                        data-price="599"        >
+                                        599 ₽
+                                    </button>
+                                    <button id="layout_text_study_button_mobile" class="study_button" data-title="ВЁРСТКА ТЕКСТА">Заниматься</button>
+                                </div>
+                                <div class="lesson_description">
+                                    <div>
+                                        10 задач
+                                    </div>
+                                    <!-- <div>
+                                        <img src="./media/icons/watch.svg"></img>
+                                        1 час
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="lightning_card_mobile" class="lightning_block">
+                        <div class="lightning_block_object">
+                            <img src="./media/lightning_object.svg" loading="lazy" id="lightning_block_object"></img>
+                        </div>
+                        <div class="lightning_block_description">
+                            <p>При покупке любого раздела <br /> все будущие обновления <br /> раздела — бесплатно</p>
+                        </div>
+                    </div>
+
+                    <div id="anchor_object_card_mobile" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">
+                        <div class="triangle_object">
+                            <img src="./media/triangle.svg" id="triangle_object_img" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ"></img>
+                        </div>
+                        <div>
+                            <div class="rule_object">
+                                <h3 class="titles_default" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">ЯКОРНЫЕ <br /> ОБЪЕКТЫ</h3>
+                            </div>
+                            <div class="current_price price_data_block_small">
+                                <div>
+                                    <button class="pay_button" id="anchor_objects_pay_button_mobile" data-price="599" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">599 ₽</button>
+                                    <button class="study_button" id="anchor_objects_study_button_mobile" data-title="ЯКОРНЫЕ ОБЪЕКТЫ">Заниматься</button>
+                                </div>
+                                <div class="lesson_description">
+                                    <div>
+                                        13 задач
+                                    </div>
+                                    <!-- <div>
+                                        <img src="./media/icons/watch.svg"></img>
+                                        1 час
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="module_card" data-price="599" data-title="МОДУЛИ">
+                        <div class="four_circles_object">
+                            <img src="./media/four_circles.svg" id="four_circles_img" data-price="599" data-title="МОДУЛИ"></img>
+                        </div>
+                        <div>
+                            <div class="modular">
+                                <h3 class="titles_default" data-price="599" data-title="МОДУЛИ">МОДУЛИ</h3>
+                            </div>
+                            <div class="current_price price_data_block_three_number">
+                                <div>
+                                    <button class="pay_button" style="display: none;" id="module_pay_button" data-price="599" data-title="МОДУЛИ">599 ₽</button>
+                                    <button class="study_button" style="display: none;" id="module_study_button" data-title="МОДУЛИ">Заниматься</button>
+                                    <button class="soon_label">Скоро</button>
+                                </div>
+                                <div class="lesson_description">
+                                    <div>
+                                        10 задач
+                                    </div>
+                                    <!-- <div>
+                                        <img src="./media/icons/watch.svg"></img>
+                                        1 час
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </content>
             <footer class="footer">
                 <div class="footer_content">
@@ -342,10 +522,10 @@
                 <p>Мы отправим ссылку на авторизацию</p>
             </div>
             <div class="enter_email_option">
-                <input type="email" name="" id="" placeholder="Электронная почта">
-                <button><img href="./media/icons/right_arrow.svg" loading="lazy"></img></button>
+                <input type="email" name="" id="login_email_input_layout_mobile" placeholder="Электронная почта">
+                <button id="send_email_button_layout_mobile"><img src="./media/icons/right_arrow.svg" id="send_email_button_icon_mobile"></img></button>
             </div>
-            <div class="enter_buro_option">
+            <!-- <div class="enter_buro_option">
                 <div class="label_or">
                     <p>или</p>
                 </div>
@@ -355,6 +535,21 @@
                 <div class="enter_with_buro_description">
                     <p>Если вы учитесь в Школе бюро, авторизируйтесь здесь. Задачник получит ваши данные из Бюросферы  и откроет доступ ко всем разделам бесплатно.</p>
                 </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div id="account_layer_mobile">
+        <div class="account_layer_close_button">
+            <span class="account_layer_close_button_mid_line"></span>
+        </div>
+
+        <div class="account_layer_mobile_content">
+            <div>
+                <p id="account_title"></>
+            </div>
+            <div class="logout_button_mobile">
+                <button id="logout_button_mobile">Выйти</button>
             </div>
         </div>
     </div>

@@ -76,7 +76,7 @@ header {
   content: '';
   display: block;
   width: 100%;
-  margin-top: 11px;
+  margin-top: 4px;
   height: 2px;
   background-color: #e20016;
 }
@@ -469,6 +469,10 @@ header {
   text-decoration: underline;
 }
 
+.mail > a:hover {
+  text-decoration: underline;
+}
+
 .documents > div {
   display: flex;
   justify-content: space-around;
@@ -569,6 +573,26 @@ header {
   padding-left: 12px;
   transition: all 0.2s;
   padding: 2px 0px 9px 12px;
+}
+
+.logout_button_mobile > button {
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  border: none;
+  font-size: 28px;
+  font-family: 'FuturaNowText-Rg';
+  font-weight: 400;
+  line-height: 21px;
+  text-align: start;
+  padding-left: 12px;
+  transition: all 0.2s;
+  padding: 6px 0px 6px 0px;
+}
+
+.logout_button_mobile > button:active {
+  background-color: #e20016;
+  color: #ffffff;
 }
 
 .logout_button > button:hover {
@@ -674,7 +698,8 @@ header {
   transition: all 0.2s;
 }
 
-#login_layer_mobile {
+#login_layer_mobile,
+#account_layer_mobile {
   display: none;
   width: 0px;
   height: 0px;
@@ -694,6 +719,19 @@ header {
     padding: 0px;
   }
 
+  #pay_layout {
+    width: 50%;
+  }
+
+  .pay_layout_content_wrapper {
+    width: 310px !important;
+    min-height: 300px !important;
+  }
+
+  #main_flow_mobile {
+    flex-direction: column;
+  }
+
   header {
     direction: rtl;
     align-items: center;
@@ -704,8 +742,22 @@ header {
     display: none;
   }
 
+  .content_layer {
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  #first_step_circles_img,
+  #double_circles_img,
+  #question_block_img,
+  #triangle_object_img,
+  #four_circles_img {
+    width: 350px;
+  }
+
   .menu_burger {
     display: block;
+    justify-self: flex-start;
     padding-left: 10px;
     z-index: 4;
   }
@@ -715,7 +767,7 @@ header {
     width: 30px;
     height: 3px;
     background-color: #ffffff;
-    transition: all 0.2s;
+    transition: all 0.4s;
   }
 
   .menu_burger_mid_line::after {
@@ -743,7 +795,23 @@ header {
   .menu_burger_mid_line_active {
     display: block;
     background-color: rgba(0, 0, 0, 0);
-    transition: all 0.2s;
+    transition: all 0.4s;
+  }
+
+  .enter_labels > h5 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'FuturaNowText-Md';
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .enter_labels > p {
+    font-size: 18px;
+  }
+
+  .enter_email_option {
+    margin-top: 20px;
   }
 
   .menu_burger_mid_line_active::after {
@@ -773,10 +841,6 @@ header {
     line-height: 51px;
   }
 
-  .main_flow {
-    display: flex;
-  }
-
   .rule_inside_and_outside > h3,
   .modular > h3 {
     font-size: 36px;
@@ -791,26 +855,6 @@ header {
     font-size: 36px;
   }
 
-  .second_step_all_themes {
-    display: none;
-  }
-
-  .second_step_all_themes_mobile_mode {
-    display: block;
-  }
-
-  .second_step_right_column {
-    display: none;
-  }
-
-  .second_step_right_column_mobile_mode {
-    display: block;
-  }
-
-  .text_layout {
-    display: none;
-  }
-
   .text_layout_mobile_mode {
     display: block;
     font-size: 36px;
@@ -820,20 +864,12 @@ header {
     line-height: 44px;
   }
 
-  .right_column {
-    display: none;
-  }
-
-  .right_column_mobile_mode {
+  .footer_mobile_mode {
     display: block;
   }
 
   .footer {
     display: none;
-  }
-
-  .footer_mobile_mode {
-    display: block;
   }
 
   .footer_mobile_mode a {
@@ -882,31 +918,42 @@ header {
 
   #menu_layer_mobile {
     display: block;
-    width: 0%;
-    height: 0vh;
+    width: 100%;
+    height: 100vh;
     visibility: hidden;
     background-color: #ffffff;
     position: absolute;
-    top: 0px;
+    top: 100vh;
     right: 0px;
-    transition: all 0.5s;
+    transition: all 0.7s;
   }
 
-  #login_layer_mobile {
+  #login_layer_mobile,
+  #account_layer_mobile {
     display: block;
-    width: 0%;
-    height: 0vh;
+    width: 100%;
+    height: 100vh;
     visibility: hidden;
     background-color: #ffffff;
     position: absolute;
-    top: 0px;
+    top: 100vh;
     left: 0px;
-    transition: all 0.5s;
+    transition: all 0.7s;
     z-index: 10;
   }
 
-  #login_layer_mobile > .login_layer_mobile_content {
+  #login_layer_mobile > .login_layer_mobile_content,
+  #account_layer_mobile > .account_layer_mobile_content {
     display: none;
+  }
+
+  #account_title {
+    color: black;
+    font-size: 28px;
+    font-family: 'FuturaNowText-Md';
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 12px;
   }
 
   #menu_layer_mobile > .nav {
@@ -915,28 +962,28 @@ header {
 
   .login_layer_mobile_active {
     display: block !important;
-    width: 100% !important;
-    height: 100vh !important;
+    top: 0px !important;
     visibility: visible !important;
     transition: all 0.2s;
   }
 
-  .login_layer_mobile_active > .login_layer_mobile_content {
+  .login_layer_mobile_active > .login_layer_mobile_content,
+  .login_layer_mobile_active > .account_layer_mobile_content{
     display: grid !important;
     margin-top: 60px;
-    padding: 10px;
+    padding: 0px 10px;
   }
 
   .menu_layer_mobile_active {
     display: block !important;
-    width: 100% !important;
-    height: 100vh !important;
+    top: 0px !important;
     visibility: visible !important;
     transition: all 0.2s;
   }
 
   .menu_layer_mobile_active > .nav {
     display: flex !important;
+    padding: 0px 10px;
   }
 
   .nav {
@@ -956,6 +1003,7 @@ header {
     font-family: 'FuturaNowText-Md';
     font-weight: 500;
     line-height: 27.5px;
+    margin-bottom: 12px;
   }
 
   .nav > a,
@@ -964,21 +1012,25 @@ header {
     font-family: 'FuturaNowText-Rg';
     font-weight: 400;
     line-height: 40px;
+    margin-bottom: 14px;
   }
 
-  .login_layer_close_button {
+  .login_layer_close_button,
+  .account_layer_close_button {
     position: absolute;
     top: 33px;
     right: 27px;
   }
 
-  .login_layer_close_button_mid_line {
+  .login_layer_close_button_mid_line,
+  .account_layer_close_button_mid_line {
     display: block;
     background-color: rgba(0, 0, 0, 0);
     transition: all 0.2s;
   }
 
-  .login_layer_close_button_mid_line::after {
+  .login_layer_close_button_mid_line::after,
+  .account_layer_close_button_mid_line::after {
     display: block;
     background-color: #000000;
 
@@ -989,7 +1041,8 @@ header {
     transition: all 0.2s;
   }
 
-  .login_layer_close_button_mid_line::before {
+  .login_layer_close_button_mid_line::before,
+  .account_layer_close_button_mid_line::before {
     display: block;
     background-color: #000000;
 

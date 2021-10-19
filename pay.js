@@ -24,8 +24,87 @@ const insideAndOutsideCardPay = document.querySelector('#inside_and_outside_card
 const textLayoutCardPay = document.querySelector('#text_layout_card');
 const anchorObjectCardPay = document.querySelector('#anchor_object_card');
 
+// Pay cards mobile
+const allThemesCardMobile = document.querySelector('#all_themes_card_mobile');
+const insideAndOutsideCardPayMobile = document.querySelector('#inside_and_outside_card_mobile');
+const textLayoutCardPayMobile = document.querySelector('#text_layout_card_mobile');
+const anchorObjectCardPayMobile = document.querySelector('#anchor_object_card_mobile');
+
+allThemesCardMobile.addEventListener('click', async (e) => {
+  const email = localStorage.getItem('email')
+  console.log(email)
+
+  const result = await fetch(`${backend}/getPaidLessons`, {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+    }),
+  })
+
+  const lessons = await result.json()
+  const lessonTitles = lessons.map(item => item.lesson)
+  const disableAllPayButton = lessonTitles.includes('ВСЕ ТЕМЫ')
+
+  if(!disableAllPayButton) {
+    payButtonOnclick(e)
+  }
+})
+
+insideAndOutsideCardPayMobile.addEventListener('click', async (e) => {
+  const email = localStorage.getItem('email')
+  const result = await fetch(`${backend}/getPaidLessons`, {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+    }),
+  })
+
+  const lessons = await result.json()
+  const lessonTitles = lessons.map(item => item.lesson)
+  const disableInexternalPayButton = lessonTitles.includes('ВНУТРЕННЕE И ВНЕШНЕE') || lessonTitles.includes('ВСЕ ТЕМЫ')
+
+  if(!disableInexternalPayButton) {
+    payButtonOnclick(e)
+  }
+})
+
+textLayoutCardPayMobile.addEventListener('click', async (e) => {
+  const email = localStorage.getItem('email')
+  const result = await fetch(`${backend}/getPaidLessons`, {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+    }),
+  })
+
+  const lessons = await result.json()
+  const lessonTitles = lessons.map(item => item.lesson)
+  const disableTextLayoutPayButton = lessonTitles.includes('ВЁРСТКА ТЕКСТА') || lessonTitles.includes('ВСЕ ТЕМЫ')
+  if(!disableTextLayoutPayButton) {
+    payButtonOnclick(e)
+  }
+})
+
+anchorObjectCardPayMobile.addEventListener('click', async (e) => {
+  const email = localStorage.getItem('email')
+  const result = await fetch(`${backend}/getPaidLessons`, {
+    method: 'POST',
+    body: JSON.stringify({
+      email: email,
+    }),
+  })
+
+  const lessons = await result.json()
+  const lessonTitles = lessons.map(item => item.lesson)
+  const disableAnchorObjectPayButton = lessonTitles.includes('ЯКОРНЫЕ ОБЪЕКТЫ') || lessonTitles.includes('ВСЕ ТЕМЫ')
+  if(!disableAnchorObjectPayButton) {
+    payButtonOnclick(e)
+  }
+})
+
 allThemesCardPay.addEventListener('click', async (e) => {
   const email = localStorage.getItem('email')
+  console.log(email)
 
   const result = await fetch(`${backend}/getPaidLessons`, {
     method: 'POST',
@@ -101,7 +180,18 @@ const globalProblems = {
 }
 
 tryButton.addEventListener('click', () => {
-  window.location.href = './pages/tryout/1.html'
+  const email = localStorage.getItem('email')
+
+  if(email) {
+    window.location.href = './pages/tryout/1.html'
+  }
+
+  if(!email) {
+    authLayout.style.display = 'grid'
+
+    authLayout.style.backdropFilter = 'blur(16)'
+    authLayout.style.opacity = '1'
+  }
 })
 
 insideAndOutsideStudyButton.addEventListener('click', async (e) => {
@@ -159,11 +249,11 @@ anchorObjectStudyButton.addEventListener('click', async (e) => {
   const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
   const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
 
-  if (currentTaskIndex + 1 === globalProblems.inexternal.data.length) {
+  if (currentTaskIndex + 1 === globalProblems.anchor.data.length) {
     window.location.href = `./pages/anchor/final.html`
   }
 
-  if (currentTaskIndex + 1 !== globalProblems.inexternal.data.length) {
+  if (currentTaskIndex + 1 !== globalProblems.anchor.data.length) {
     window.location.href = `./pages/anchor/${nextTask}.html`
   }
 })
@@ -190,11 +280,12 @@ textLayoutStudyButton.addEventListener('click', async (e) => {
   const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
   const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
 
-  if (currentTaskIndex + 1 === globalProblems.inexternal.data.length) {
+
+  if (currentTaskIndex + 1 === globalProblems.text.data.length) {
     window.location.href = `./pages/text/final.html`
   }
 
-  if (currentTaskIndex + 1 !== globalProblems.inexternal.data.length) {
+  if (currentTaskIndex + 1 !== globalProblems.text.data.length) {
     window.location.href = `./pages/text/${nextTask}.html`
   }
 })
@@ -217,6 +308,8 @@ authLayout.addEventListener('click', (e) => {
 
 allThemesPayButton.addEventListener('click', async (e) => {
   const email = localStorage.getItem('email')
+
+  console.log(email)
 
   const result = await fetch(`${backend}/getPaidLessons`, {
     method: 'POST',
@@ -255,18 +348,28 @@ ruleInsideAndOutsidePayButton.addEventListener('click', async (e) => {
 
 textLayoutPayButton.addEventListener('click', async (e) => {
   const email = localStorage.getItem('email')
-  const result = await fetch(`${backend}/getPaidLessons`, {
-    method: 'POST',
-    body: JSON.stringify({
-      email: email,
-    }),
-  })
+  if(email) {
+    const result = await fetch(`${backend}/getPaidLessons`, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email,
+      }),
+    })
+  
+    const lessons = await result.json()
+    const lessonTitles = lessons.map(item => item.lesson)
+    const disableTextLayoutPayButton = lessonTitles.includes('ВЁРСТКА ТЕКСТА')
+    if(!disableTextLayoutPayButton) {
+      payButtonOnclick(e)
+    }
+  }
 
-  const lessons = await result.json()
-  const lessonTitles = lessons.map(item => item.lesson)
-  const disableTextLayoutPayButton = lessonTitles.includes('ВЁРСТКА ТЕКСТА')
-  if(!disableTextLayoutPayButton) {
-    payButtonOnclick(e)
+  if(!email) {
+    authLayout.style.display = 'grid'
+
+    authLayout.style.backdropFilter = 'blur(16)'
+    authLayout.style.opacity = '1'
+
   }
 })
 
