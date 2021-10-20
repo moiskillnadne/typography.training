@@ -1,4 +1,6 @@
 const payLayout = document.querySelector('#pay_layout')
+const payLayoutCloseButton = document.querySelector('.pay_layout_close_button')
+const loginLayerMobile = document.querySelector('#login_layer_mobile')
 const allThemesPayButton = document.querySelector('#all_themes_pay_button')
 const firstStepCirclesImg = document.querySelector('#first_step_circles_img')
 const allThemesTitle = document.querySelector('#all_themes_title')
@@ -182,16 +184,22 @@ const globalProblems = {
 tryButton.addEventListener('click', () => {
   const email = localStorage.getItem('email')
 
+  console.log('try button')
+
   if(email) {
     window.location.href = './pages/tryout/1.html'
   }
 
-  if(!email) {
+  if(!email && !window.mobileCheck()) {
     authLayout.style.display = 'grid'
 
     authLayout.style.backdropFilter = 'blur(16)'
     authLayout.style.opacity = '1'
   }
+
+  if(!email && window.mobileCheck()) {
+    loginLayerMobile.classList.add('login_layer_mobile_active')
+  } 
 })
 
 insideAndOutsideStudyButton.addEventListener('click', async (e) => {
@@ -293,6 +301,7 @@ textLayoutStudyButton.addEventListener('click', async (e) => {
 let checkout
 
 payLayout.addEventListener('click', closePayModalAnimation)
+payLayoutCloseButton.addEventListener('click', closePayModalAnimation)
 authLayout.addEventListener('click', (e) => {
   const isLayout = e.target == authLayout
 
@@ -457,9 +466,16 @@ async function payButtonOnclick(e) {
       openPayModalAnimation(paymentObject.confirmation.confirmation_token, paymentObject.id, body.title)
     }
   } else {
-    authLayout.style.display = 'grid'
 
-    authLayout.style.backdropFilter = 'blur(16)'
-    authLayout.style.opacity = '1'
+    if(window.mobileCheck()) {
+      loginLayerMobile.classList.add('login_layer_mobile_active')
+    }
+
+    if(!window.mobileCheck()) {
+      authLayout.style.display = 'grid'
+
+      authLayout.style.backdropFilter = 'blur(16)'
+      authLayout.style.opacity = '1'
+    }
   }
 }

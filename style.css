@@ -714,6 +714,44 @@ header {
   display: none;
 }
 
+.auth_layout_close_button,
+.pay_layout_close_button {
+  position: absolute;
+  top: 33px;
+  right: 27px;
+}
+
+.auth_layout_close_button_button_mid_line,
+.pay_layout_close_button_button_mid_line {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.2s;
+}
+
+.auth_layout_close_button_button_mid_line::after,
+.pay_layout_close_button_button_mid_line::after {
+  display: block;
+  background-color: #ffffff;
+
+  content: '';
+  width: 30px;
+  height: 3px;
+  transform: translateY(0px) rotate(45deg);
+  transition: all 0.2s;
+}
+
+.auth_layout_close_button_button_mid_line::before,
+.pay_layout_close_button_button_mid_line::before {
+  display: block;
+  background-color: #ffffff;
+
+  content: '';
+  width: 30px;
+  height: 3px;
+  transform: translateY(3px) rotate(-45deg);
+  transition: all 0.2s;
+}
+
 @media screen and (max-width: 576px) {
   .root {
     padding: 0px;
@@ -730,6 +768,18 @@ header {
 
   #main_flow_mobile {
     flex-direction: column;
+  }
+
+  #main_flow_mobile > div {
+    margin-bottom: 62px;
+  }
+
+  #module_card {
+    margin-top: 0px;
+  }
+
+  .lightning_block {
+    padding-top: 0px;
   }
 
   header {
@@ -912,7 +962,7 @@ header {
   }
 
   .current_price {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     grid-template-columns: 1fr 1fr;
   }
 
@@ -935,7 +985,7 @@ header {
     height: 100vh;
     visibility: hidden;
     background-color: #ffffff;
-    position: absolute;
+    position: fixed;
     top: 100vh;
     left: 0px;
     transition: all 0.7s;
@@ -1020,6 +1070,7 @@ header {
     position: absolute;
     top: 33px;
     right: 27px;
+    cursor: pointer;
   }
 
   .login_layer_close_button_mid_line,

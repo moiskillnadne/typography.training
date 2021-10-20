@@ -30,6 +30,8 @@ window.onload = async () => {
   const loginLayerMobile = document.querySelector('#login_layer_mobile')
   const accountLayerCloseButton = document.querySelector('.account_layer_close_button')
 
+  const authLayoutCloseButton = document.querySelector('.auth_layout_close_button')
+
   const loginInput = document.querySelector('#login_email_input')
   const loginInputLayout = document.querySelector('#login_email_input_layout')
   const loginInputLayoutMobile =document.querySelector('#login_email_input_layout_mobile')
@@ -203,6 +205,13 @@ window.onload = async () => {
   })
   accountLayerCloseButton.addEventListener('click', () => {
     accountLayerMobile.classList.remove('login_layer_mobile_active')
+  })
+
+  authLayoutCloseButton.addEventListener('click', () => {
+    // authLayout.style.backdropFilter = 'blur(0)'
+    authLayout.style.opacity = '0'
+
+    setTimeout(() => authLayout.style.display = 'none', 250)
   })
 
   loginInput.addEventListener('input', onLoginInputChange)
