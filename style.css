@@ -717,8 +717,9 @@ header {
 .auth_layout_close_button,
 .pay_layout_close_button {
   position: absolute;
-  top: 33px;
-  right: 27px;
+  top: 17px;
+  right: 10px;
+  cursor: pointer;
 }
 
 .auth_layout_close_button_button_mid_line,
@@ -731,7 +732,7 @@ header {
 .auth_layout_close_button_button_mid_line::after,
 .pay_layout_close_button_button_mid_line::after {
   display: block;
-  background-color: #ffffff;
+  background-color: #000000;
 
   content: '';
   width: 30px;
@@ -743,7 +744,7 @@ header {
 .auth_layout_close_button_button_mid_line::before,
 .pay_layout_close_button_button_mid_line::before {
   display: block;
-  background-color: #ffffff;
+  background-color: #000000;
 
   content: '';
   width: 30px;
@@ -809,7 +810,7 @@ header {
     display: block;
     justify-self: flex-start;
     padding-left: 10px;
-    z-index: 4;
+    z-index: 2;
   }
 
   .menu_burger_mid_line {
@@ -1066,7 +1067,8 @@ header {
   }
 
   .login_layer_close_button,
-  .account_layer_close_button {
+  .account_layer_close_button,
+  .menu_layer_close_button {
     position: absolute;
     top: 33px;
     right: 27px;
@@ -1074,14 +1076,16 @@ header {
   }
 
   .login_layer_close_button_mid_line,
-  .account_layer_close_button_mid_line {
+  .account_layer_close_button_mid_line,
+  .menu_layer_close_button_mid_line {
     display: block;
     background-color: rgba(0, 0, 0, 0);
     transition: all 0.2s;
   }
 
   .login_layer_close_button_mid_line::after,
-  .account_layer_close_button_mid_line::after {
+  .account_layer_close_button_mid_line::after,
+  .menu_layer_close_button_mid_line::after {
     display: block;
     background-color: #000000;
 
@@ -1093,7 +1097,8 @@ header {
   }
 
   .login_layer_close_button_mid_line::before,
-  .account_layer_close_button_mid_line::before {
+  .account_layer_close_button_mid_line::before,
+  .menu_layer_close_button_mid_line::before {
     display: block;
     background-color: #000000;
 

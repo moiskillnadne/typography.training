@@ -36,10 +36,25 @@
   transition: 0.5s;
 }
 
+#auth_layout > div {
+  position: relative;
+}
+
 .pay_layout_content_wrapper {
-  width: 400px;
-  min-height: 380px;
+  width: 420px;
+  min-height: 400px;
   background-color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+#payment-form {
+  height: 300px;
+  width: 350px;
 }
 
 #all_themes_card {

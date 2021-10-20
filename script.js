@@ -22,6 +22,7 @@ window.onload = async () => {
 
   const burgerMenuButton = document.querySelector('.menu_burger_mid_line')
   const menuLayerMobile = document.querySelector('#menu_layer_mobile')
+  const closeMenuLayerButton = document.querySelector('.menu_layer_close_button')
 
   const loginPopupStatusHidden = 'none'
   const loginPopupStatusShow = 'block'
@@ -187,7 +188,6 @@ window.onload = async () => {
   burgerMenuButton.addEventListener('click', (e) => {
 
     const isScroll = body.style.overflow
-    console.log(isScroll)
 
     if(isScroll === 'hidden') {
       body.style.overflow = 'scroll'
@@ -196,7 +196,13 @@ window.onload = async () => {
     }
 
 
-    setTimeout(() => burgerMenuButton.classList.toggle('menu_burger_mid_line_active'), 300)
+    // setTimeout(() => burgerMenuButton.classList.toggle('menu_burger_mid_line_active'), 300)
+    burgerMenuButton.style.display = 'none'
+    menuLayerMobile.classList.toggle('menu_layer_mobile_active')
+  })
+
+  closeMenuLayerButton.addEventListener('click', () => {
+    burgerMenuButton.style.display = 'block'
     menuLayerMobile.classList.toggle('menu_layer_mobile_active')
   })
 
