@@ -14,8 +14,15 @@ const mobulePayButton = document.querySelector('#module_pay_button')
 
 // const allThemesStudyButton = document.querySelector('#all_themes_study_button')
 const insideAndOutsideStudyButton = document.querySelector('#inside_and_outside_study_button')
+const insideAndOutsideStudyButtonMobile = document.querySelector('#inside_and_outside_study_button_mobile')
+
 const textLayoutStudyButton = document.querySelector('#layout_text_study_button')
+const textLayoutStudyButtonMobile = document.querySelector('#layout_text_study_button_mobile')
+
 const anchorObjectStudyButton = document.querySelector('#anchor_objects_study_button')
+const anchorObjectStudyButtonMobile = document.querySelector('#anchor_objects_study_button_mobile')
+
+
 const moduleStudyButton = document.querySelector('#module_study_button')
 const tryButton = document.querySelector('#try_button')
 const authLayout = document.querySelector('#auth_layout')
@@ -235,7 +242,71 @@ insideAndOutsideStudyButton.addEventListener('click', async (e) => {
   }
 })
 
+insideAndOutsideStudyButtonMobile.addEventListener('click', async (e) => {
+  const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+    method: 'POST',
+    mode: 'cors',
+    body: JSON.stringify({
+      email: localStorage.getItem('email'),
+      lessonTitle: e.target.dataset.title,
+    }),
+  })
+
+  const json = await courseProgress.json()
+  console.log(json)
+  if (json.length === 0) {
+    window.location.href = `./pages/inexternal/1.html`
+  }
+
+  const tasks = json[0].tasks
+  if (tasks.length === 0) {
+    window.location.href = `./pages/inexternal/1.html`
+  }
+  const currentTask = tasks[tasks.length - 1]
+  const currentTaskIndex = globalProblems.inexternal.data.indexOf(currentTask.id)
+  const nextTask = globalProblems.inexternal.data[currentTaskIndex + 1]
+
+  if (currentTaskIndex + 1 === globalProblems.inexternal.data.length) {
+    window.location.href = `./pages/inexternal/final.html`
+  }
+
+  if (currentTaskIndex + 1 !== globalProblems.inexternal.data.length) {
+    window.location.href = `./pages/inexternal/${nextTask}.html`
+  }
+})
+
 anchorObjectStudyButton.addEventListener('click', async (e) => {
+  const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+    method: 'POST',
+    mode: 'cors',
+    body: JSON.stringify({
+      email: localStorage.getItem('email'),
+      lessonTitle: e.target.dataset.title,
+    }),
+  })
+
+  const json = await courseProgress.json()
+  if (json.length === 0) {
+    window.location.href = `./pages/anchor/1.html`
+  }
+  const tasks = json[0].tasks
+  if (tasks.length === 0) {
+    window.location.href = `./pages/anchor/1.html`
+  }
+  const currentTask = tasks[tasks.length - 1]
+  const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
+  const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
+
+  if (currentTaskIndex + 1 === globalProblems.anchor.data.length) {
+    window.location.href = `./pages/anchor/final.html`
+  }
+
+  if (currentTaskIndex + 1 !== globalProblems.anchor.data.length) {
+    window.location.href = `./pages/anchor/${nextTask}.html`
+  }
+})
+
+anchorObjectStudyButtonMobile.addEventListener('click', async (e) => {
   const courseProgress = await fetch(`${backend}/getCourseProgress`, {
     method: 'POST',
     mode: 'cors',
@@ -298,6 +369,38 @@ textLayoutStudyButton.addEventListener('click', async (e) => {
   }
 })
 
+textLayoutStudyButtonMobile.addEventListener('click', async (e) => {
+  const courseProgress = await fetch(`${backend}/getCourseProgress`, {
+    method: 'POST',
+    mode: 'cors',
+    body: JSON.stringify({
+      email: localStorage.getItem('email'),
+      lessonTitle: e.target.dataset.title,
+    }),
+  })
+
+  const json = await courseProgress.json()
+  if (json.length === 0) {
+    window.location.href = `./pages/text/1.html`
+  }
+  const tasks = json[0].tasks
+  if (tasks.length === 0) {
+    window.location.href = `./pages/text/1.html`
+  }
+  const currentTask = tasks[tasks.length - 1]
+  const currentTaskIndex = globalProblems.anchor.data.indexOf(currentTask.id)
+  const nextTask = globalProblems.anchor.data[currentTaskIndex + 1]
+
+
+  if (currentTaskIndex + 1 === globalProblems.text.data.length) {
+    window.location.href = `./pages/text/final.html`
+  }
+
+  if (currentTaskIndex + 1 !== globalProblems.text.data.length) {
+    window.location.href = `./pages/text/${nextTask}.html`
+  }
+})
+
 let checkout
 
 payLayout.addEventListener('click', closePayModalAnimation)
@@ -316,9 +419,8 @@ authLayout.addEventListener('click', (e) => {
 })
 
 allThemesPayButton.addEventListener('click', async (e) => {
+  e.stopImmediatePropagation()
   const email = localStorage.getItem('email')
-
-  console.log(email)
 
   const result = await fetch(`${backend}/getPaidLessons`, {
     method: 'POST',
@@ -331,13 +433,13 @@ allThemesPayButton.addEventListener('click', async (e) => {
   const lessonTitles = lessons.map(item => item.lesson)
   const disableAllPayButton = lessonTitles.includes('ВСЕ ТЕМЫ')
 
-  console.log(disableAllPayButton)
   if(!disableAllPayButton) {
     payButtonOnclick(e)
   }
 })
 
 ruleInsideAndOutsidePayButton.addEventListener('click', async (e) => {
+  e.stopImmediatePropagation()
   const email = localStorage.getItem('email')
   const result = await fetch(`${backend}/getPaidLessons`, {
     method: 'POST',
@@ -356,6 +458,7 @@ ruleInsideAndOutsidePayButton.addEventListener('click', async (e) => {
 })
 
 textLayoutPayButton.addEventListener('click', async (e) => {
+  e.stopImmediatePropagation()
   const email = localStorage.getItem('email')
   if(email) {
     const result = await fetch(`${backend}/getPaidLessons`, {
@@ -383,6 +486,7 @@ textLayoutPayButton.addEventListener('click', async (e) => {
 })
 
 anchorObjectPayButton.addEventListener('click', async (e) => {
+  e.stopImmediatePropagation()
   const email = localStorage.getItem('email')
   const result = await fetch(`${backend}/getPaidLessons`, {
     method: 'POST',
